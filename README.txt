@@ -1,0 +1,3 @@
+Drop is our CS147 final project for Fall 2014. It is a native iOS application that gamifies water usage to encourage decreased consumption.
+
+Made by Mathieu Rolfo, Kelsey Josund, and Megan Lu
