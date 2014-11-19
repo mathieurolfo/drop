@@ -1,22 +1,29 @@
 //
-//  HomeControllerViewController.m
+//  PlantController.m
 //  dropApp
 //
-//  Created by Mathieu Rolfo on 11/16/14.
+//  Created by Mathieu Rolfo on 11/19/14.
 //  Copyright (c) 2014 Drop. All rights reserved.
 //
 
-#import "HomeControllerViewController.h"
+#import "PlantController.h"
+#import "AppDelegate.h"
 
-@interface HomeControllerViewController ()
+@interface PlantController ()
 
 @end
 
-@implementation HomeControllerViewController
+@implementation PlantController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    UIImage *image = [UIImage imageNamed:@"plantA.png"];
+    [self.plantView setImage:image];
+    
+    self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
+    self.lifetimeDrops.text = [NSString stringWithFormat:@"Lifetime Drops: %d", delegate.user.lifetimeDrops];
 }
 
 - (void)didReceiveMemoryWarning {

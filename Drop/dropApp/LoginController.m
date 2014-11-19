@@ -8,7 +8,8 @@
 
 #import "LoginController.h"
 #import "AppDelegate.h"
-#import "HomeControllerViewController.h"
+#import "PlantController.h"
+#import "User.h"
 
 @interface LoginController ()
 
@@ -28,20 +29,38 @@
 
 - (IBAction)loginPressed:(id)sender {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    HomeControllerViewController *homeController = [[HomeControllerViewController alloc] init];
-    delegate.homeController = homeController;
-    [delegate.drawer setCenterViewController:homeController];
+    
+    delegate.user = [[User alloc] init];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    delegate.tabBarController = tabBarController;
+    
+    PlantController *plantController = [[PlantController alloc] init];
+    //delegate.plantController = plantController;
+    
+    UIImage *plantIcon = [UIImage imageNamed:@"lukefirth.png"];
+    UIImage *resizedPlant = [UIImage imageWithCGImage:[plantIcon CGImage]
+                             scale:35.0/(plantIcon.scale) orientation:(plantIcon.imageOrientation)];
+    plantController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Plant" image:resizedPlant tag:0];
+    
+    TasksController *tasksController = [[TasksController alloc] init];
+    delegate.tasksController = tasksController;
+    
+    UIImage *tasksIcon = [UIImage imageNamed:@"igorneverov.png"];
+    UIImage *resizedTasks = [UIImage imageWithCGImage:[tasksIcon CGImage]
+                                                scale:35.0/(tasksIcon.scale) orientation:(tasksIcon.imageOrientation)];
+    
+    tasksController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Tasks" image:resizedTasks tag:1];
+    
+    NSArray *controllers = [NSArray arrayWithObjects:plantController, tasksController, nil];
+    tabBarController.viewControllers = controllers;
+    
+    
+    
+    [delegate.drawer setCenterViewController:tabBarController];
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
