@@ -12,9 +12,10 @@
 
 -(id)init {
     if(self = [super init]) {
-        _lifetimeDrops = 1;
-        _currentDrops = 1;
+        _currentDrops = 10;
+        _lifetimeDrops = _currentDrops;
     }
+    NSLog(@"after init currentDrops is %d", _currentDrops);
     return self;
 }
 

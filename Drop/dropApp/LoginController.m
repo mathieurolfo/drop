@@ -31,6 +31,7 @@
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
     delegate.user = [[User alloc] init];
+    NSLog(@"after init currentDrops is %d", delegate.user.currentDrops);
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     delegate.tabBarController = tabBarController;
