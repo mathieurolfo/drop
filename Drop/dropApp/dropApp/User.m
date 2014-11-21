@@ -14,6 +14,7 @@
     if(self = [super init]) {
         _currentDrops = 10;
         _lifetimeDrops = _currentDrops;
+        // set other variables!
     }
     NSLog(@"after init currentDrops is %d", _currentDrops);
     return self;
