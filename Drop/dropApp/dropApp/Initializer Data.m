@@ -23,19 +23,19 @@
     user_one.password = @"pwtest1";
     user_one.currentDrops = 5;
     user_one.lifetimeDrops = 15;
-    user_one.dropsWatered = 6;
+    user_one.dropsWatered = 0; // plant in start state
     
     user_two.username = @"Matt";
     user_two.password = @"pwtest1";
     user_two.currentDrops = 5;
     user_two.lifetimeDrops = 15;
-    user_two.dropsWatered = 6;
+    user_two.dropsWatered = 6; // plant partially grown
     
     user_three.username = @"Megan";
     user_three.password = @"pwtest1";
     user_three.currentDrops = 5;
-    user_three.lifetimeDrops = 15;
-    user_three.dropsWatered = 6;
+    user_three.lifetimeDrops = 20;
+    user_three.dropsWatered = 15; // plant quite grown
   
     // add users to dictionary
     [dict setObject: user_one forKey:@"one"];
