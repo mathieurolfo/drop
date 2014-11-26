@@ -11,7 +11,7 @@
 #import "LoginController.h"
 #import "PlantController.h"
 #import "User.h"
-#import "TasksController.h"
+#import "UserTasksController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,7 +20,7 @@
 @property (strong, nonatomic) LoginController *login;
 @property (strong, nonatomic) PlantController *plantController;
 @property (strong, nonatomic) User *user;
-@property (strong, nonatomic) TasksController *tasksController;
+@property (strong, nonatomic) UserTasksController *tasksController;
 @property (strong, nonatomic) UITabBarController *tabBarController;
 
 @end

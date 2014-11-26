@@ -10,12 +10,14 @@
 
 @implementation User
 
+/*
+ This is the initialization of the user's properties. 
+ */
 -(id)init {
     if(self = [super init]) {
         _currentDrops = 10;
         _lifetimeDrops = _currentDrops;
     }
-    NSLog(@"after init currentDrops is %d", _currentDrops);
     return self;
 }
 

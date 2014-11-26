@@ -1,18 +1,18 @@
 //
-//  TasksController.m
+//  UserTasksController.m
 //  dropApp
 //
-//  Created by Mathieu Rolfo on 11/19/14.
+//  Created by Mathieu Rolfo on 11/23/14.
 //  Copyright (c) 2014 Drop. All rights reserved.
 //
 
-#import "TasksController.h"
+#import "UserTasksController.h"
 
-@interface TasksController ()
+@interface UserTasksController ()
 
 @end
 
-@implementation TasksController
+@implementation UserTasksController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

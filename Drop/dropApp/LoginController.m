@@ -9,6 +9,7 @@
 #import "LoginController.h"
 #import "AppDelegate.h"
 #import "PlantController.h"
+#import "UserTasksController.h"
 #import "User.h"
 
 @interface LoginController ()
@@ -30,33 +31,37 @@
 - (IBAction)loginPressed:(id)sender {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
+    //Initializes the user. Currently creates a default user, but will eventually check the existing database.
     delegate.user = [[User alloc] init];
-    NSLog(@"after init currentDrops is %d", delegate.user.currentDrops);
     
+    //Creates the tab bar controller. Won't change.
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     delegate.tabBarController = tabBarController;
     
+    //Create the plant and task controllers, the containing navigation controllers, and adds the icon to the tab bar.
     PlantController *plantController = [[PlantController alloc] init];
-    //delegate.plantController = plantController;
+    UINavigationController *plantNavController = [[UINavigationController alloc] initWithRootViewController:plantController];
+    
+    
+    UserTasksController *tasksController = [[UserTasksController alloc] init];
+    delegate.tasksController = tasksController;
+    UINavigationController *tasksNavController = [[UINavigationController alloc] initWithRootViewController:tasksController];
+
     
     UIImage *plantIcon = [UIImage imageNamed:@"lukefirth.png"];
     UIImage *resizedPlant = [UIImage imageWithCGImage:[plantIcon CGImage]
                              scale:35.0/(plantIcon.scale) orientation:(plantIcon.imageOrientation)];
-    plantController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Plant" image:resizedPlant tag:0];
-    
-    TasksController *tasksController = [[TasksController alloc] init];
-    delegate.tasksController = tasksController;
-    
     UIImage *tasksIcon = [UIImage imageNamed:@"igorneverov.png"];
     UIImage *resizedTasks = [UIImage imageWithCGImage:[tasksIcon CGImage]
                                                 scale:35.0/(tasksIcon.scale) orientation:(tasksIcon.imageOrientation)];
     
+    
+
+    plantController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Plant" image:resizedPlant tag:0];
     tasksController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Tasks" image:resizedTasks tag:1];
     
-    NSArray *controllers = [NSArray arrayWithObjects:plantController, tasksController, nil];
+    NSArray *controllers = [NSArray arrayWithObjects:plantNavController, tasksNavController, nil];
     tabBarController.viewControllers = controllers;
-    
-    
     
     [delegate.drawer setCenterViewController:tabBarController];
     
