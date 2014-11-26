@@ -15,8 +15,10 @@
  */
 -(id)init {
     if(self = [super init]) {
-        _currentDrops = 10;
-        _lifetimeDrops = _currentDrops;
+        // this needs to respond to the logged in user -- one of the three in Initializer Data!
+        // set variables based on data there and login provided at login screen to load one of three states
+        // _currentDrops = 10;
+        // _lifetimeDrops = _currentDrops;
     }
     return self;
 }

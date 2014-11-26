@@ -23,6 +23,7 @@
 		4EC23AE21A197C0A001F0F48 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EC23AE01A197C0A001F0F48 /* LoginController.xib */; };
 		4EFCA3481A22C77A00CA7663 /* UserTasksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA3461A22C77A00CA7663 /* UserTasksController.m */; };
 		4EFCA3491A22C77A00CA7663 /* UserTasksController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA3471A22C77A00CA7663 /* UserTasksController.xib */; };
+		C87FD5F81A1EEAFD00DB247A /* Initializer Data.m in Sources */ = {isa = PBXBuildFile; fileRef = C87FD5F71A1EEAFD00DB247A /* Initializer Data.m */; };s
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		5E1D5D3844F67151144694E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6756F3D22607CA67D9CDEF16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6AAB71C2E761477FD2BBE96E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C87FD5F61A1EEAFD00DB247A /* Initializer Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Initializer Data.h"; sourceTree = "<group>"; };
+		C87FD5F71A1EEAFD00DB247A /* Initializer Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Initializer Data.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				4EC23ABA1A1974F5001F0F48 /* AppDelegate.h */,
 				4EC23ABB1A1974F5001F0F48 /* AppDelegate.m */,
 				4EBE94111A1D49EA008E6F21 /* User.h */,
+				C87FD5F61A1EEAFD00DB247A /* Initializer Data.h */,
+				C87FD5F71A1EEAFD00DB247A /* Initializer Data.m */,
 				4EBE94121A1D49EA008E6F21 /* User.m */,
 				4E0A9FCE1A1E86A00046B440 /* Action.h */,
 				4E0A9FCF1A1E86A00046B440 /* Action.m */,
@@ -319,6 +324,7 @@
 				4EFCA3481A22C77A00CA7663 /* UserTasksController.m in Sources */,
 				4EBE94131A1D49EA008E6F21 /* User.m in Sources */,
 				4EC23AE11A197C0A001F0F48 /* LoginController.m in Sources */,
+				C87FD5F81A1EEAFD00DB247A /* Initializer Data.m in Sources */,
 				4EC23ABC1A1974F5001F0F48 /* AppDelegate.m in Sources */,
 				4EC23AB91A1974F5001F0F48 /* main.m in Sources */,
 				4EBE94171A1D4C90008E6F21 /* SideMenuController.m in Sources */,
@@ -427,19 +433,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = dropApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		4EC23AD81A1974F5001F0F48 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E1D5D3844F67151144694E3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = dropApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -456,6 +465,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = dropAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dropApp.app/dropApp";
@@ -471,6 +481,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = dropAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dropApp.app/dropApp";
