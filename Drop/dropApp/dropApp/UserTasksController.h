@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserTasksController : UIViewController
-
+@interface UserTasksController : UIViewController 
 @end
