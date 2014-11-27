@@ -27,6 +27,8 @@
 		4EFCA34E1A264F0200CA7663 /* TaskDatabaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA34C1A264F0200CA7663 /* TaskDatabaseController.xib */; };
 		4EFCA3571A2666C900CA7663 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA3551A2666C900CA7663 /* TaskCell.m */; };
 		4EFCA3581A2666C900CA7663 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA3561A2666C900CA7663 /* TaskCell.xib */; };
+		4EFCA35C1A27C6E000CA7663 /* UserTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA35A1A27C6E000CA7663 /* UserTaskCell.m */; };
+		4EFCA35D1A27C6E000CA7663 /* UserTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA35B1A27C6E000CA7663 /* UserTaskCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,9 @@
 		4EFCA3541A2666C900CA7663 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
 		4EFCA3551A2666C900CA7663 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
 		4EFCA3561A2666C900CA7663 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		4EFCA3591A27C6E000CA7663 /* UserTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTaskCell.h; sourceTree = "<group>"; };
+		4EFCA35A1A27C6E000CA7663 /* UserTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTaskCell.m; sourceTree = "<group>"; };
+		4EFCA35B1A27C6E000CA7663 /* UserTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTaskCell.xib; sourceTree = "<group>"; };
 		5E1D5D3844F67151144694E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6756F3D22607CA67D9CDEF16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6AAB71C2E761477FD2BBE96E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +155,9 @@
 				4EBE94141A1D4C90008E6F21 /* SideMenuController.h */,
 				4EBE94151A1D4C90008E6F21 /* SideMenuController.m */,
 				4EBE94161A1D4C90008E6F21 /* SideMenuController.xib */,
+				4EFCA3591A27C6E000CA7663 /* UserTaskCell.h */,
+				4EFCA35A1A27C6E000CA7663 /* UserTaskCell.m */,
+				4EFCA35B1A27C6E000CA7663 /* UserTaskCell.xib */,
 				4EFCA3541A2666C900CA7663 /* TaskCell.h */,
 				4EFCA3551A2666C900CA7663 /* TaskCell.m */,
 				4EFCA3561A2666C900CA7663 /* TaskCell.xib */,
@@ -276,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EFCA3581A2666C900CA7663 /* TaskCell.xib in Resources */,
+				4EFCA35D1A27C6E000CA7663 /* UserTaskCell.xib in Resources */,
 				4EBE94181A1D4C90008E6F21 /* SideMenuController.xib in Resources */,
 				4EFCA3491A22C77A00CA7663 /* UserTasksController.xib in Resources */,
 				4EBE94221A1D5BDE008E6F21 /* PlantController.xib in Resources */,
@@ -342,6 +351,7 @@
 				4EFCA34D1A264F0200CA7663 /* TaskDatabaseController.m in Sources */,
 				4EC23AB91A1974F5001F0F48 /* main.m in Sources */,
 				4EBE94171A1D4C90008E6F21 /* SideMenuController.m in Sources */,
+				4EFCA35C1A27C6E000CA7663 /* UserTaskCell.m in Sources */,
 				4EBE94211A1D5BDE008E6F21 /* PlantController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

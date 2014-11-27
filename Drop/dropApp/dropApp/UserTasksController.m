@@ -9,7 +9,7 @@
 #import "UserTasksController.h"
 #import "AppDelegate.h"
 #import "TaskDatabaseController.h"
-#import "TaskCell.h"
+#import "UserTaskCell.h"
 #import "Action.h"
 
 @interface UserTasksController ()
@@ -30,7 +30,7 @@
     UIBarButtonItem *newTasksButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushTaskDatabaseController)];
     self.navigationItem.rightBarButtonItem = newTasksButton;
 
-    [self.tableView registerNib:[UINib nibWithNibName:@"TaskCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"UserTaskCell" bundle:nil] forCellReuseIdentifier:@"usercell"];
     
 }
 
@@ -41,11 +41,13 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    TaskCell *taskCell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    UserTaskCell *taskCell = [tableView dequeueReusableCellWithIdentifier:@"usercell"];
     Action *action = delegate.user.pinnedTasks[indexPath.row];
     taskCell.nameLabel.text = action.name;
     taskCell.dropLabel.text = [NSString stringWithFormat:@"%d", action.dropValue];
-    taskCell.pinTaskButton.hidden = YES;
+    NSLog(@"%@", taskCell.dropLabel.text);
+    taskCell.delegate = self;
+    taskCell.cellIndex = indexPath.row;
 
     return taskCell;
 }
@@ -56,6 +58,22 @@
     return [delegate.user.pinnedTasks count];
 }
 
+-(void)didCompleteTaskAtIndex:(NSInteger)cellIndex
+{
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    Action *action = delegate.user.pinnedTasks[cellIndex];
+    
+    delegate.user.lifetimeDrops += action.dropValue;
+    delegate.user.currentDrops += action.dropValue;
+    NSLog(@"added to drop count");
+    
+    //Need a notification here
+    
+    
+    [delegate.user.pinnedTasks removeObjectAtIndex:cellIndex];
+    [self.tableView reloadData];
+    [delegate.plantController reloadInputViews];
+}
 
 
 -(void)pushTaskDatabaseController

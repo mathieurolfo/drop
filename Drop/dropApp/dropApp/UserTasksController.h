@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserTaskCell.h"
 
-@interface UserTasksController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface UserTasksController : UIViewController <UITableViewDataSource, UITableViewDelegate, UserTaskCellDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

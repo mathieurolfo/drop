@@ -16,9 +16,7 @@
 - (IBAction)buttonClicked:(id)sender {
     NSLog(@"button clicked, code inside taskCell, at index %d, %@", self.cellIndex, self.delegate);
     [self.delegate didPinTaskAtIndex:self.cellIndex];
-    /*AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    Action *action = delegate.tasksDatabase[_cellIndex];
-    [delegate.user.pinnedTasks addObject:action]; */
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
