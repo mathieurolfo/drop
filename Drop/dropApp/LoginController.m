@@ -47,7 +47,8 @@
     delegate.tasksController = tasksController;
     UINavigationController *tasksNavController = [[UINavigationController alloc] initWithRootViewController:tasksController];
 
-    
+    delegate.tasksNav = tasksNavController;
+    //Create and add the images to the tab bar.
     UIImage *plantIcon = [UIImage imageNamed:@"lukefirth.png"];
     UIImage *resizedPlant = [UIImage imageWithCGImage:[plantIcon CGImage]
                              scale:35.0/(plantIcon.scale) orientation:(plantIcon.imageOrientation)];
@@ -55,11 +56,10 @@
     UIImage *resizedTasks = [UIImage imageWithCGImage:[tasksIcon CGImage]
                                                 scale:35.0/(tasksIcon.scale) orientation:(tasksIcon.imageOrientation)];
     
-    
-
     plantController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Plant" image:resizedPlant tag:0];
     tasksController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Tasks" image:resizedTasks tag:1];
     
+    //Finish initializing the tab bar controller.
     NSArray *controllers = [NSArray arrayWithObjects:plantNavController, tasksNavController, nil];
     tabBarController.viewControllers = controllers;
     

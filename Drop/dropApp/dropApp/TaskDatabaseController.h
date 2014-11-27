@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaskCell.h"
 
-@interface TaskDatabaseController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface TaskDatabaseController : UIViewController <UITableViewDelegate, UITableViewDataSource, TaskCellDelegate>
 
 @property(nonatomic, strong) NSArray *tasksArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
 
 
 @end

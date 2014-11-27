@@ -17,6 +17,7 @@
     if(self = [super init]) {
         _currentDrops = 10;
         _lifetimeDrops = _currentDrops;
+        _pinnedTasks = [[NSMutableArray alloc] init];
     }
     return self;
 }

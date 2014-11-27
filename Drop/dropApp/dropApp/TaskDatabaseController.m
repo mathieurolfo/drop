@@ -9,6 +9,7 @@
 #import "TaskDatabaseController.h"
 #import "TaskCell.h"
 #import "Action.h"
+#import "AppDelegate.h"
 
 @interface TaskDatabaseController ()
 
@@ -16,11 +17,13 @@
 
 @implementation TaskDatabaseController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"New Tasks";
+    [self.tableView registerNib:[UINib nibWithNibName:@"TaskCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     // Do any additional setup after loading the view from its nib.
-    [self initDatabase];
+    ;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,42 +31,45 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)didPinTaskAtIndex:(NSInteger)cellIndex
+{
+    NSLog(@"pinned task");
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    Action *action = delegate.tasksDatabase[cellIndex];
+    [delegate.user.pinnedTasks addObject:action];
+    
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell
+  *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TaskCell *taskCell = [[TaskCell alloc] init];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    TaskCell *taskCell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    Action *taskAction = (delegate.tasksDatabase[indexPath.row]);
+    taskCell.nameLabel.text = taskAction.name;
+    taskCell.dropLabel.text = [NSString stringWithFormat:@"%d", taskAction.dropValue];
+    taskCell.cellIndex = indexPath.row;
+    taskCell.delegate = self;
     
-    Action *taskAction = (self.tasksArray[indexPath.row]);
-    taskCell.taskTitleLabel.text = taskAction.name;
-    taskCell.dropCountLabel.text = [NSString stringWithFormat:@"%d", taskAction.dropValue];
-    return taskCell;
+    
+    return (UITableViewCell *)taskCell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.tasksArray count];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    return [delegate.tasksDatabase count];
 }
 
--(void) initDatabase
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSMutableArray *tasksArray = [[NSMutableArray alloc] init];
-    
-    Action *action0 = [[Action alloc] init];
-    action0.name = @"Take Shorter Showers";
-    action0.dropValue = 5;
-    [tasksArray addObject:action0];
-    
-    Action *action1 = [[Action alloc] init];
-    action1.name = @"Install Low-flow Showerhead";
-    action1.dropValue = 20;
-    [tasksArray addObject:action1];
-    self.tasksArray = tasksArray;
+   [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 
 
 @end

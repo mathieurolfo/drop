@@ -25,8 +25,8 @@
 		4EFCA3491A22C77A00CA7663 /* UserTasksController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA3471A22C77A00CA7663 /* UserTasksController.xib */; };
 		4EFCA34D1A264F0200CA7663 /* TaskDatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA34B1A264F0200CA7663 /* TaskDatabaseController.m */; };
 		4EFCA34E1A264F0200CA7663 /* TaskDatabaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA34C1A264F0200CA7663 /* TaskDatabaseController.xib */; };
-		4EFCA3521A26517800CA7663 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA3501A26517800CA7663 /* TaskCell.m */; };
-		4EFCA3531A26517800CA7663 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA3511A26517800CA7663 /* TaskCell.xib */; };
+		4EFCA3571A2666C900CA7663 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA3551A2666C900CA7663 /* TaskCell.m */; };
+		4EFCA3581A2666C900CA7663 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA3561A2666C900CA7663 /* TaskCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,9 +69,9 @@
 		4EFCA34A1A264F0200CA7663 /* TaskDatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDatabaseController.h; sourceTree = "<group>"; };
 		4EFCA34B1A264F0200CA7663 /* TaskDatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDatabaseController.m; sourceTree = "<group>"; };
 		4EFCA34C1A264F0200CA7663 /* TaskDatabaseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDatabaseController.xib; sourceTree = "<group>"; };
-		4EFCA34F1A26517800CA7663 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
-		4EFCA3501A26517800CA7663 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
-		4EFCA3511A26517800CA7663 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		4EFCA3541A2666C900CA7663 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
+		4EFCA3551A2666C900CA7663 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
+		4EFCA3561A2666C900CA7663 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		5E1D5D3844F67151144694E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6756F3D22607CA67D9CDEF16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6AAB71C2E761477FD2BBE96E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,12 +147,12 @@
 				4EFCA3451A22C77A00CA7663 /* UserTasksController.h */,
 				4EFCA3461A22C77A00CA7663 /* UserTasksController.m */,
 				4EFCA3471A22C77A00CA7663 /* UserTasksController.xib */,
-				4EFCA34F1A26517800CA7663 /* TaskCell.h */,
-				4EFCA3501A26517800CA7663 /* TaskCell.m */,
-				4EFCA3511A26517800CA7663 /* TaskCell.xib */,
 				4EBE94141A1D4C90008E6F21 /* SideMenuController.h */,
 				4EBE94151A1D4C90008E6F21 /* SideMenuController.m */,
 				4EBE94161A1D4C90008E6F21 /* SideMenuController.xib */,
+				4EFCA3541A2666C900CA7663 /* TaskCell.h */,
+				4EFCA3551A2666C900CA7663 /* TaskCell.m */,
+				4EFCA3561A2666C900CA7663 /* TaskCell.xib */,
 				4EC23AC31A1974F5001F0F48 /* Images.xcassets */,
 				4EC23AB61A1974F5001F0F48 /* Supporting Files */,
 			);
@@ -275,7 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EFCA3531A26517800CA7663 /* TaskCell.xib in Resources */,
+				4EFCA3581A2666C900CA7663 /* TaskCell.xib in Resources */,
 				4EBE94181A1D4C90008E6F21 /* SideMenuController.xib in Resources */,
 				4EFCA3491A22C77A00CA7663 /* UserTasksController.xib in Resources */,
 				4EBE94221A1D5BDE008E6F21 /* PlantController.xib in Resources */,
@@ -335,7 +335,7 @@
 			files = (
 				4E0A9FD01A1E86A00046B440 /* Action.m in Sources */,
 				4EFCA3481A22C77A00CA7663 /* UserTasksController.m in Sources */,
-				4EFCA3521A26517800CA7663 /* TaskCell.m in Sources */,
+				4EFCA3571A2666C900CA7663 /* TaskCell.m in Sources */,
 				4EBE94131A1D49EA008E6F21 /* User.m in Sources */,
 				4EC23AE11A197C0A001F0F48 /* LoginController.m in Sources */,
 				4EC23ABC1A1974F5001F0F48 /* AppDelegate.m in Sources */,

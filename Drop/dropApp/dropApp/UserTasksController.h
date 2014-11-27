@@ -8,5 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserTasksController : UIViewController 
+@interface UserTasksController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end

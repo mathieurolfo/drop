@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,31 +14,40 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXd-X7-75K">
-                        <rect key="frame" x="8" y="5" width="30" height="30"/>
-                        <state key="normal" title="+">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDd-Ht-juO">
-                        <rect key="frame" x="67" y="11" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRH-Mk-hnX">
+                        <rect key="frame" x="48" y="13" width="36" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbH-Ra-e3O">
-                        <rect key="frame" x="270" y="14" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSv-Y8-c4E">
+                        <rect key="frame" x="8" y="7" width="30" height="30"/>
+                        <state key="normal" title="+">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lIW-BC-yzk"/>
+                            <action selector="buttonClicked:" destination="-2" eventType="touchUpInside" id="sfm-AQ-Qdb"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfq-by-Rvc">
+                        <rect key="frame" x="285" y="13" width="27" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="fRH-Mk-hnX" secondAttribute="centerY" id="5sI-M7-oPQ"/>
+                    <constraint firstItem="fRH-Mk-hnX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="40" id="DyC-yK-qBW"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="dropCountLabel" destination="nbH-Ra-e3O" id="Y17-On-IG7"/>
-                <outlet property="pinTaskButton" destination="nXd-X7-75K" id="HYi-ZU-BNv"/>
-                <outlet property="taskTitleLabel" destination="fDd-Ht-juO" id="Wrr-j4-09F"/>
+                <outlet property="dropLabel" destination="dfq-by-Rvc" id="HJS-3F-k19"/>
+                <outlet property="nameLabel" destination="fRH-Mk-hnX" id="x1k-8G-chx"/>
+                <outlet property="pinTaskButton" destination="TSv-Y8-c4E" id="tBk-Fd-eWF"/>
             </connections>
+            <point key="canvasLocation" x="266" y="217"/>
         </tableViewCell>
     </objects>
 </document>

@@ -13,5 +13,6 @@
 @property (nonatomic) int currentDrops;
 @property (nonatomic) int lifetimeDrops;
 @property (nonatomic) int dropsWatered;
+@property (strong, nonatomic) NSMutableArray *pinnedTasks;
 
 @end

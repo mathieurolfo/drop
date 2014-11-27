@@ -12,6 +12,7 @@
 #import "LoginController.h"
 #import "PlantController.h"
 #import "User.h"
+#import "Action.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,10 @@
 
 @implementation AppDelegate
 
+-(void)menuButtonClicked
+{
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -35,8 +40,26 @@
     [window makeKeyAndVisible];
     [self setWindow:window];
 
+    [self initDatabase];
     
     return YES;
+}
+
+-(void)initDatabase {
+    
+    NSMutableArray *tasksArray = [[NSMutableArray alloc] init];
+        
+    Action *action0 = [[Action alloc] init];
+    action0.name = @"Take Shorter Showers";
+    action0.dropValue = 5;
+    [tasksArray addObject:action0];
+    
+    Action *action1 = [[Action alloc] init];
+    action1.name = @"Install Low-flow Showerhead";
+    action1.dropValue = 20;
+    [tasksArray addObject:action1];
+    self.tasksDatabase = tasksArray;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

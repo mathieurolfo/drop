@@ -22,6 +22,10 @@
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) UserTasksController *tasksController;
 @property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) UINavigationController *tasksNav;
+@property (strong, nonatomic) NSArray *tasksDatabase;
+
+-(void)menuButtonClicked;
 
 @end
 

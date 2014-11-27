@@ -1,16 +1,29 @@
 //
 //  TaskCell.h
-//  dropApp
+//  
 //
 //  Created by Mathieu Rolfo on 11/26/14.
-//  Copyright (c) 2014 Drop. All rights reserved.
+//
 //
 
 #import <UIKit/UIKit.h>
 
-@interface TaskCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *dropCountLabel;
-@property (weak, nonatomic) IBOutlet UILabel *taskTitleLabel;
-@property (weak, nonatomic) IBOutlet UIButton *pinTaskButton;
+@protocol TaskCellDelegate <NSObject>
+
+-(void)didPinTaskAtIndex:(NSInteger)cellIndex;
 
 @end
+
+@interface TaskCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dropLabel;
+@property (weak, nonatomic) IBOutlet UIButton *pinTaskButton;
+-(IBAction)buttonClicked:(id)sender;
+@property (weak, nonatomic) id<TaskCellDelegate> delegate;
+@property (assign, nonatomic) NSInteger cellIndex;
+
+
+
+@end
+
+

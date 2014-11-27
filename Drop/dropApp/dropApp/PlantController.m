@@ -34,9 +34,8 @@
 
     self.title = @"Your Plant";
     //UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:delegate action:@selector("menuButtonClicked")];
-    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(menuButtonClicked)];
+    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:delegate action:@selector(menuButtonClicked)];
     self.navigationItem.leftBarButtonItem = menuButton;
-    //UIBarButtonItem *item = [[UIBarButtonItem alloc] initwit]
 
 }
 
