@@ -41,6 +41,7 @@
     //Create the plant and task controllers, the containing navigation controllers, and adds the icon to the tab bar.
     PlantController *plantController = [[PlantController alloc] init];
     UINavigationController *plantNavController = [[UINavigationController alloc] initWithRootViewController:plantController];
+    delegate.plantController = plantController;
     
     
     UserTasksController *tasksController = [[UserTasksController alloc] init];

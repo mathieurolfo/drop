@@ -65,14 +65,14 @@
     
     delegate.user.lifetimeDrops += action.dropValue;
     delegate.user.currentDrops += action.dropValue;
-    NSLog(@"added to drop count");
+    NSLog(@"added to drop count lifetime is %d", delegate.user.lifetimeDrops);
     
     //Need a notification here
     
     
     [delegate.user.pinnedTasks removeObjectAtIndex:cellIndex];
     [self.tableView reloadData];
-    [delegate.plantController reloadInputViews];
+    [delegate.plantController refreshScreen];
 }
 
 

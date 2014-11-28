@@ -50,11 +50,11 @@
 
 - (IBAction)waterButtonClicked:(id)sender {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    NSLog(@"%f %f", self.plantView.bounds.size.width, self.plantView.bounds.size.height);
     if (delegate.user.currentDrops > 0) {
         delegate.user.currentDrops -= 1;
         delegate.user.dropsWatered += 1;
     }
+    
     if (delegate.user.dropsWatered > 0 && delegate.user.dropsWatered <= 5) {
         self.plantView.image = [UIImage imageNamed:@"plantB.png"];
     }
@@ -65,7 +65,15 @@
     
     self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
     [self.view setNeedsDisplay];
-    NSLog(@"%f %f", self.plantView.bounds.size.width, self.plantView.bounds.size.height);
+    NSLog(@"%d, %d", delegate.user.currentDrops, delegate.user.lifetimeDrops);
+}
+
+-(void)refreshScreen {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
+    self.lifetimeDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.lifetimeDrops];
+    NSLog(@"refreshScreen");
+    [self.view setNeedsDisplay];
 }
 
 /*

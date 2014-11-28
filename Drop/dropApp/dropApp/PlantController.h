@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *plantView;
 @property (weak, nonatomic) IBOutlet UIButton *waterButton;
 
+-(void)refreshScreen;
+
 @end
