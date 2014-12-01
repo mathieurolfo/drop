@@ -7,6 +7,7 @@
 //
 
 #import "UserDatabase.h"
+#import "User.h"
 #import "AppDelegate.h"
 
 @implementation UserDatabase
@@ -31,7 +32,11 @@
 
 -(BOOL)saveChanges
 {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    [self.userDatabase setObject:delegate.user forKey:delegate.user.name];
 
+    
     NSString *path = [self itemArchivePath];
     return [NSKeyedArchiver archiveRootObject:self.userDatabase toFile:path];
 }

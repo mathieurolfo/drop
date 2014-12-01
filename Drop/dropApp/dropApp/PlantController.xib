@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlantController">
             <connections>
                 <outlet property="currentDrops" destination="Hgo-cf-rxw" id="e4m-Pi-0s4"/>
-                <outlet property="lifetimeDrops" destination="e0W-ct-QvL" id="50a-ma-r5J"/>
                 <outlet property="plantView" destination="ThE-RJ-05f" id="ngq-aw-Xox"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="waterButton" destination="vSt-Zc-inm" id="q53-eR-Y7E"/>
@@ -21,12 +20,6 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Plant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-Nq-9JD">
                     <rect key="frame" x="261" y="508" width="79" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0W-ct-QvL">
-                    <rect key="frame" x="518" y="97" width="36" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -55,15 +48,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Hgo-cf-rxw" firstAttribute="top" secondItem="e0W-ct-QvL" secondAttribute="bottom" constant="8" id="4bT-oI-OeH"/>
-                <constraint firstAttribute="trailing" secondItem="Hgo-cf-rxw" secondAttribute="trailing" constant="46" id="Aks-Ah-7GR"/>
                 <constraint firstItem="vSt-Zc-inm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="144" id="EGi-Ev-vrt"/>
+                <constraint firstAttribute="trailing" secondItem="Hgo-cf-rxw" secondAttribute="trailing" constant="46" id="Gl4-Eu-n8h"/>
+                <constraint firstItem="Hgo-cf-rxw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="122" id="Wqb-Yb-kpM"/>
                 <constraint firstItem="ThE-RJ-05f" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="46" id="ePM-8i-jXH"/>
                 <constraint firstAttribute="centerX" secondItem="QS8-Nq-9JD" secondAttribute="centerX" id="eUU-5R-Jda"/>
-                <constraint firstAttribute="trailing" secondItem="e0W-ct-QvL" secondAttribute="trailing" constant="46" id="ldr-dM-Ull"/>
                 <constraint firstItem="vSt-Zc-inm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="54" id="o82-Lm-0xF"/>
                 <constraint firstItem="QS8-Nq-9JD" firstAttribute="top" secondItem="ThE-RJ-05f" secondAttribute="bottom" constant="13" id="oBo-cb-IMB"/>
-                <constraint firstItem="e0W-ct-QvL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="97" id="tBH-lu-vQB"/>
                 <constraint firstAttribute="centerX" secondItem="ThE-RJ-05f" secondAttribute="centerX" id="uLL-4u-JII"/>
             </constraints>
             <point key="canvasLocation" x="188" y="98"/>

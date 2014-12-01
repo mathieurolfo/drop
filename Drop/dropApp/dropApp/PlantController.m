@@ -25,8 +25,6 @@
     [self.plantView setImage:image];
     
     self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
-    self.lifetimeDrops.text = [NSString stringWithFormat:@"Lifetime Drops: %d", delegate.user.lifetimeDrops];
-    
     
     UIImage *canImage = [UIImage imageNamed:@"wateringCan.png"];
     UIImage *resizedPlant = [UIImage imageWithCGImage:[canImage CGImage]
@@ -67,13 +65,12 @@
     
     self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
     [self.view setNeedsDisplay];
-    NSLog(@"%d, %d", delegate.user.currentDrops, delegate.user.lifetimeDrops);
+    
 }
 
 -(void)refreshScreen {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
-    self.lifetimeDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.lifetimeDrops];
     NSLog(@"refreshScreen");
     [self.view setNeedsDisplay];
 }

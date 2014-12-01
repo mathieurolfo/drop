@@ -43,12 +43,16 @@
     User *testUser = [delegate.userDatabase.userDatabase objectForKey:self.usernameField.text];
     
     if (testUser) {
-        NSLog(@"this user exists");
+        NSLog(@"this is an existing user");
+        delegate.user = testUser;
     } else {
         NSLog(@"this is a brand new user");
+        delegate.user = [[User alloc] init];
+        delegate.user.name = self.usernameField.text;
+        delegate.user.password = self.passwordField.text;
     }
+    
     //Initializes the user. Currently creates a default user, but will eventually check the existing database.
-    delegate.user = [[User alloc] init];
     
     //Creates the tab bar controller. Won't change.
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
