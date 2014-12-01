@@ -26,6 +26,7 @@
 @property (strong, nonatomic) NSArray *tasksDatabase;
 
 -(void)menuButtonClicked;
-
+-(void)enableDrawerAccess;
+-(void)disableDrawerAccess;
 @end
 

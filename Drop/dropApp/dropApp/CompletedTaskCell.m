@@ -1,21 +1,17 @@
 //
-//  UserTaskCell.m
+//  CompletedTaskCell.m
 //  dropApp
 //
-//  Created by Mathieu Rolfo on 11/27/14.
+//  Created by Mathieu Rolfo on 11/30/14.
 //  Copyright (c) 2014 Drop. All rights reserved.
 //
 
-#import "UserTaskCell.h"
+#import "CompletedTaskCell.h"
 
-@implementation UserTaskCell
+@implementation CompletedTaskCell
 
 - (void)awakeFromNib {
     // Initialization code
-    
-}
-- (IBAction)buttonClicked:(id)sender {
-    [self.delegate didCompleteTaskAtIndex:self.cellIndex];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

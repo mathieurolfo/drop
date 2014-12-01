@@ -65,6 +65,7 @@
     tabBarController.viewControllers = controllers;
     
     [delegate.drawer setCenterViewController:tabBarController];
+    [delegate enableDrawerAccess];
     
 }
 

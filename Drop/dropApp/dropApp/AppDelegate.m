@@ -13,6 +13,8 @@
 #import "PlantController.h"
 #import "User.h"
 #import "Action.h"
+#import "TaskDatabase.h"
+#import "SideMenuController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +24,12 @@
 
 -(void)menuButtonClicked
 {
-    
+
+    if ([self.drawer openSide] == MMDrawerSideLeft) {
+        [self.drawer closeDrawerAnimated:YES completion:nil];
+    } else if ([self.drawer openSide] == MMDrawerSideNone) {
+        [self.drawer openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -34,32 +41,50 @@
     LoginController *login = [[LoginController alloc] init];
     self.login = login;
     
-    self.drawer = [[MMDrawerController alloc] initWithCenterViewController:login leftDrawerViewController:nil];
+    
+    SideMenuController *sideMenu = [[SideMenuController alloc] init];
+    self.drawer = [[MMDrawerController alloc] initWithCenterViewController:login leftDrawerViewController:sideMenu];
+    
+    [self.drawer setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:4.0]];
+    [self.drawer setShouldStretchDrawer:NO];
+    [self.drawer setShowsShadow:NO];
+    self.drawer.maximumLeftDrawerWidth = [UIScreen mainScreen].bounds.size.width * 2.0 / 3;
+
     
     [window setRootViewController:self.drawer];
     [window makeKeyAndVisible];
     [self setWindow:window];
 
-    [self initDatabase];
+    TaskDatabase *database = [[TaskDatabase alloc] init];
+    self.tasksDatabase = [database loadDatabase];
     
     return YES;
 }
 
--(void)initDatabase {
+-(void)loadUserbase {
     
-    NSMutableArray *tasksArray = [[NSMutableArray alloc] init];
-        
-    Action *action0 = [[Action alloc] init];
-    action0.name = @"Take Shorter Showers";
-    action0.dropValue = 5;
-    [tasksArray addObject:action0];
-    
-    Action *action1 = [[Action alloc] init];
-    action1.name = @"Install Low-flow Showerhead";
-    action1.dropValue = 20;
-    [tasksArray addObject:action1];
-    self.tasksDatabase = tasksArray;
+}
 
+
+-(void)enableDrawerAccess
+{
+    self.drawer.openDrawerGestureModeMask = MMOpenDrawerGestureModeBezelPanningCenterView |
+    MMOpenDrawerGestureModePanningNavigationBar;
+    
+    self.drawer.closeDrawerGestureModeMask = MMCloseDrawerGestureModeTapCenterView |
+    MMCloseDrawerGestureModePanningDrawerView |
+    MMCloseDrawerGestureModePanningCenterView |
+    MMCloseDrawerGestureModeTapNavigationBar |
+    MMCloseDrawerGestureModePanningNavigationBar;
+    
+}
+
+-(void)disableDrawerAccess
+{
+    
+    self.drawer.openDrawerGestureModeMask = 0;
+    self.drawer.closeDrawerGestureModeMask = 0;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

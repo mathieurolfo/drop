@@ -11,6 +11,8 @@
 
 @interface PlantController ()
 
+@property (strong, nonatomic) NSArray *plantLevelArray;
+
 @end
 
 @implementation PlantController

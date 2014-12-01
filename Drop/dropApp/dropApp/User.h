@@ -10,6 +10,7 @@
 
 @interface User : NSObject
 
+@property (strong, nonatomic) NSString *name;
 @property (nonatomic) int currentDrops;
 @property (nonatomic) int lifetimeDrops;
 @property (nonatomic) int dropsWatered;

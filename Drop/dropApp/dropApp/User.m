@@ -18,6 +18,7 @@
         _currentDrops = 10;
         _lifetimeDrops = _currentDrops;
         _pinnedTasks = [[NSMutableArray alloc] init];
+        _completedTasks = [[NSMutableArray alloc] init];
     }
     return self;
 }

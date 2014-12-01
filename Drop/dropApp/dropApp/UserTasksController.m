@@ -65,12 +65,16 @@
     
     delegate.user.lifetimeDrops += action.dropValue;
     delegate.user.currentDrops += action.dropValue;
-    NSLog(@"added to drop count lifetime is %d", delegate.user.lifetimeDrops);
     
     //Need a notification here
     
+    //how to format to short style?
+    action.dateAdded = [NSDate date];
     
+    [delegate.user.completedTasks addObject:action];
     [delegate.user.pinnedTasks removeObjectAtIndex:cellIndex];
+
+
     [self.tableView reloadData];
     [delegate.plantController refreshScreen];
 }

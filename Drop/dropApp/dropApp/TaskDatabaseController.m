@@ -33,7 +33,6 @@
 
 -(void)didPinTaskAtIndex:(NSInteger)cellIndex
 {
-    NSLog(@"pinned task");
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     Action *action = delegate.tasksDatabase[cellIndex];
     [delegate.user.pinnedTasks addObject:action];
