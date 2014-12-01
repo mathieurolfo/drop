@@ -34,7 +34,66 @@
 }
 
 - (IBAction)signUpPressed:(id)sender {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
+    User *testUser = [delegate.userDatabase.userDatabase objectForKey:self.usernameField.text];
+    
+    if (self.usernameField.text.length == 0 || self.passwordField.text.length == 0) {
+        NSLog(@"No valid credentials presented");
+        self.passwordField.text = @"";
+        self.usernameField.text = @"";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup didn't work!" message:@"One of your fields was left blank." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+    
+    if (testUser) {
+        NSLog(@"this is an existing user");
+        self.passwordField.text = @"";
+        self.usernameField.text = @"";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup didn't work!" message:@"This user already exists." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
+        return;
+    } else {
+        
+    
+    delegate.user = [[User alloc] init];
+    delegate.user.name = self.usernameField.text;
+    delegate.user.password = self.passwordField.text;
+        
+        UITabBarController *tabBarController = [[UITabBarController alloc] init];
+        delegate.tabBarController = tabBarController;
+        
+        //Create the plant and task controllers, the containing navigation controllers, and adds the icon to the tab bar.
+        PlantController *plantController = [[PlantController alloc] init];
+        UINavigationController *plantNavController = [[UINavigationController alloc] initWithRootViewController:plantController];
+        delegate.plantController = plantController;
+        
+        
+        UserTasksController *tasksController = [[UserTasksController alloc] init];
+        delegate.tasksController = tasksController;
+        UINavigationController *tasksNavController = [[UINavigationController alloc] initWithRootViewController:tasksController];
+        
+        delegate.tasksNav = tasksNavController;
+        //Create and add the images to the tab bar.
+        UIImage *plantIcon = [UIImage imageNamed:@"lukefirth.png"];
+        UIImage *resizedPlant = [UIImage imageWithCGImage:[plantIcon CGImage]
+                                                    scale:35.0/(plantIcon.scale) orientation:(plantIcon.imageOrientation)];
+        UIImage *tasksIcon = [UIImage imageNamed:@"igorneverov.png"];
+        UIImage *resizedTasks = [UIImage imageWithCGImage:[tasksIcon CGImage]
+                                                    scale:35.0/(tasksIcon.scale) orientation:(tasksIcon.imageOrientation)];
+        
+        plantController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Plant" image:resizedPlant tag:0];
+        tasksController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Tasks" image:resizedTasks tag:1];
+        
+        //Finish initializing the tab bar controller.
+        NSArray *controllers = [NSArray arrayWithObjects:plantNavController, tasksNavController, nil];
+        tabBarController.viewControllers = controllers;
+        
+        [delegate.drawer setCenterViewController:tabBarController];
+        [delegate enableDrawerAccess];
+    
+    }
 }
 
 - (IBAction)loginPressed:(id)sender {
@@ -42,14 +101,35 @@
     
     User *testUser = [delegate.userDatabase.userDatabase objectForKey:self.usernameField.text];
     
+    if (self.usernameField.text.length == 0 || self.usernameField.text.length == 0) {
+        NSLog(@"No valid credentials presented");
+        self.passwordField.text = @"";
+        self.usernameField.text = @"";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login didn't work!" message:@"One of your fields was left blank." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+    
     if (testUser) {
         NSLog(@"this is an existing user");
-        delegate.user = testUser;
+        if (![testUser.password isEqualToString:self.passwordField.text]) {
+            NSLog(@"incorrect password for user");
+            self.passwordField.text = @"";
+            self.usernameField.text = @"";
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login didn't work!" message:@"The password does not match what is on file for that user." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+            [alert show];
+            return;
+        } else {
+            delegate.user = testUser;
+        }
     } else {
         NSLog(@"this is a brand new user");
-        delegate.user = [[User alloc] init];
-        delegate.user.name = self.usernameField.text;
-        delegate.user.password = self.passwordField.text;
+        self.passwordField.text = @"";
+        self.usernameField.text = @"";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login didn't work!" message:@"This user does not exist." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
+        return;
+        
     }
     
     

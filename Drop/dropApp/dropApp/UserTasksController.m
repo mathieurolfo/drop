@@ -79,6 +79,14 @@
     [delegate.plantController refreshScreen];
 }
 
+-(void)didRemoveTaskAtIndex:(NSInteger)cellIndex
+{
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    [delegate.user.pinnedTasks removeObjectAtIndex:cellIndex];    
+    [self.tableView reloadData];
+    [delegate.plantController refreshScreen];
+
+}
 
 -(void)pushTaskDatabaseController
 {

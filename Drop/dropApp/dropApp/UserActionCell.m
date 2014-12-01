@@ -17,6 +17,9 @@
 - (IBAction)completeButtonClicked:(id)sender {
     [self.delegate didCompleteTaskAtIndex:self.cellIndex];
 }
+- (IBAction)deleteButtonClicked:(id)sender {
+    [self.delegate didRemoveTaskAtIndex:self.cellIndex];
+}
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -11,6 +11,7 @@
 @protocol UserActionCellDelegate <NSObject>
 
 -(void)didCompleteTaskAtIndex:(NSInteger)cellIndex;
+-(void)didRemoveTaskAtIndex:(NSInteger)cellIndex;
 
 @end
 
