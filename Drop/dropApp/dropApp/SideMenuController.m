@@ -130,6 +130,20 @@
         [delegate.drawer closeDrawerAnimated:YES completion:nil];
     }
     
+    //Logging Out
+    /*
+     The saving information workflow is as follows.
+     1) Assume we've created a new user. We allocate a new user and add this to the userDatabase dictionary. We will access the user through the delegate.user property.
+     2) When it is time to save, we need to set the current user as the object value for the key of the user's name. Then we write the NSData to file. This should take place within the saveChanges method.
+     */
+    if (indexPath.section == 2 && indexPath.row == 1) {
+        [delegate.userDatabase saveChanges];
+
+        [delegate.drawer closeDrawerAnimated:YES completion:nil];
+        [delegate.drawer setCenterViewController: delegate.login];
+        [delegate disableDrawerAccess];
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     

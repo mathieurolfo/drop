@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Action : NSObject
+@interface Action : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) int dropValue;

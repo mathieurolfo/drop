@@ -7,7 +7,33 @@
 //
 
 #import "UserDatabase.h"
+#import "AppDelegate.h"
 
 @implementation UserDatabase
+
+-(instancetype)initPrivate {
+    self = [super init];
+    if (self) {
+        NSString *path = [self itemArchivePath];
+        _userDatabase = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        if (!_userDatabase) {
+            _userDatabase = [[NSMutableDictionary alloc] init];
+        }
+    }
+    return self;
+}
+
+-(NSString *)itemArchivePath {
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories firstObject];
+    return [documentDirectory stringByAppendingPathComponent:@"users.archive"];
+}
+
+-(BOOL)saveChanges
+{
+
+    NSString *path = [self itemArchivePath];
+    return [NSKeyedArchiver archiveRootObject:self.userDatabase toFile:path];
+}
 
 @end

@@ -15,6 +15,7 @@
 #import "Action.h"
 #import "TaskDatabase.h"
 #import "SideMenuController.h"
+#import "UserDatabase.h"
 
 @interface AppDelegate ()
 
@@ -57,6 +58,8 @@
 
     TaskDatabase *database = [[TaskDatabase alloc] init];
     self.tasksDatabase = [database loadDatabase];
+   
+    self.userDatabase = [[UserDatabase alloc] init];
     
     return YES;
 }
@@ -95,6 +98,12 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    BOOL success = [self.userDatabase saveChanges];
+    if (success) {
+        NSLog(@"Saving success");
+    } else {
+        NSLog(@"Saving failure");
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

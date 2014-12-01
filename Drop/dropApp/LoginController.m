@@ -13,6 +13,8 @@
 #import "User.h"
 
 @interface LoginController ()
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
@@ -21,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.usernameField.returnKeyType = UIReturnKeyDone;
+    self.passwordField.returnKeyType = UIReturnKeyDone;
+    self.passwordField.secureTextEntry = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,9 +33,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)signUpPressed:(id)sender {
+    
+}
+
 - (IBAction)loginPressed:(id)sender {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
+    User *testUser = [delegate.userDatabase.userDatabase objectForKey:self.usernameField.text];
+    
+    if (testUser) {
+        NSLog(@"this user exists");
+    } else {
+        NSLog(@"this is a brand new user");
+    }
     //Initializes the user. Currently creates a default user, but will eventually check the existing database.
     delegate.user = [[User alloc] init];
     
@@ -69,6 +85,22 @@
     
 }
 
+#pragma mark Text Field Methods
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField.text.length == 0) {
+        NSLog(@"We've got an empty string here");
+    }
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    textField.text = @"";
+    return YES;
+}
 
 
 @end

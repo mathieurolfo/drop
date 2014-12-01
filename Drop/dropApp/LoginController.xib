@@ -8,6 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController">
             <connections>
+                <outlet property="passwordField" destination="ehZ-M6-Llv" id="rsW-XZ-NSD"/>
+                <outlet property="usernameField" destination="vT6-9i-Zbu" id="GV0-aW-DZ1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,6 +33,9 @@
                         <constraint firstAttribute="width" constant="65" id="bDB-HT-IeD"/>
                     </constraints>
                     <state key="normal" title="Sign Up"/>
+                    <connections>
+                        <action selector="signUpPressed:" destination="-1" eventType="touchUpInside" id="Mhb-Ho-PKn"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo v2" translatesAutoresizingMaskIntoConstraints="NO" id="Tra-H6-VbW">
                     <rect key="frame" x="130" y="61" width="341" height="256"/>
@@ -40,22 +45,29 @@
                     </constraints>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vT6-9i-Zbu">
-                    <rect key="frame" x="218" y="367" width="181" height="30"/>
+                    <rect key="frame" x="210" y="367" width="181" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="h8G-cB-KF2"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-M6-Llv">
-                    <rect key="frame" x="218" y="410" width="181" height="30"/>
+                    <rect key="frame" x="210" y="410" width="181" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="181" id="8d0-dw-G0z"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="dat-Np-h6j"/>
+                    </connections>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Tra-H6-VbW" firstAttribute="centerX" secondItem="T0Q-fh-tMV" secondAttribute="centerX" constant="-86" id="2Kv-va-sVI"/>
+                <constraint firstAttribute="centerX" secondItem="vT6-9i-Zbu" secondAttribute="centerX" id="A9f-NU-Pm7"/>
                 <constraint firstItem="T0Q-fh-tMV" firstAttribute="leading" secondItem="hTM-1L-2x4" secondAttribute="trailing" constant="94" id="BwH-cw-XWr"/>
                 <constraint firstItem="Tra-H6-VbW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="61" id="CU7-C6-u9j"/>
                 <constraint firstItem="hTM-1L-2x4" firstAttribute="top" secondItem="ehZ-M6-Llv" secondAttribute="bottom" constant="27" id="IuK-KQ-Kbd"/>
@@ -64,8 +76,8 @@
                 <constraint firstAttribute="centerX" secondItem="T0Q-fh-tMV" secondAttribute="centerX" constant="-86.5" id="Uau-ZO-p6i"/>
                 <constraint firstItem="hTM-1L-2x4" firstAttribute="baseline" secondItem="T0Q-fh-tMV" secondAttribute="firstBaseline" id="gNN-Q2-Zvn"/>
                 <constraint firstItem="ehZ-M6-Llv" firstAttribute="top" secondItem="vT6-9i-Zbu" secondAttribute="bottom" constant="13" id="jRz-oq-sin"/>
-                <constraint firstItem="ehZ-M6-Llv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="218" id="kJz-pe-uYo"/>
                 <constraint firstItem="hTM-1L-2x4" firstAttribute="firstBaseline" secondItem="T0Q-fh-tMV" secondAttribute="baseline" id="krs-Ah-AC2"/>
+                <constraint firstAttribute="centerX" secondItem="ehZ-M6-Llv" secondAttribute="centerX" id="r9s-3j-LPo"/>
                 <constraint firstItem="ehZ-M6-Llv" firstAttribute="leading" secondItem="vT6-9i-Zbu" secondAttribute="leading" id="tUj-U8-wd1"/>
                 <constraint firstItem="ehZ-M6-Llv" firstAttribute="trailing" secondItem="vT6-9i-Zbu" secondAttribute="trailing" id="xVZ-6O-mhv"/>
             </constraints>

@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface User : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *password;
 @property (nonatomic) int currentDrops;
 @property (nonatomic) int lifetimeDrops;
 @property (nonatomic) int dropsWatered;

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UserDatabase : NSObject <NSCoding>
-
+@interface UserDatabase : NSObject
+@property (strong, nonatomic) NSMutableDictionary *userDatabase;
+-(BOOL)saveChanges;
 @end

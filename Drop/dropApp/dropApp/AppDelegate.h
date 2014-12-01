@@ -12,6 +12,7 @@
 #import "PlantController.h"
 #import "User.h"
 #import "UserTasksController.h"
+#import "UserDatabase.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -24,6 +25,7 @@
 @property (strong, nonatomic) UITabBarController *tabBarController;
 @property (strong, nonatomic) UINavigationController *tasksNav;
 @property (strong, nonatomic) NSArray *tasksDatabase;
+@property (strong, nonatomic) UserDatabase *userDatabase;
 
 -(void)menuButtonClicked;
 -(void)enableDrawerAccess;
