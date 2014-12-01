@@ -42,10 +42,8 @@
     LoginController *login = [[LoginController alloc] init];
     self.login = login;
     
-    
     SideMenuController *sideMenu = [[SideMenuController alloc] init];
     self.drawer = [[MMDrawerController alloc] initWithCenterViewController:login leftDrawerViewController:sideMenu];
-    
     [self.drawer setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:4.0]];
     [self.drawer setShouldStretchDrawer:NO];
     [self.drawer setShowsShadow:NO];

@@ -12,7 +12,7 @@
 
 @implementation UserDatabase
 
--(instancetype)initPrivate {
+-(instancetype)init {
     self = [super init];
     if (self) {
         NSString *path = [self itemArchivePath];

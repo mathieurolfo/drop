@@ -52,7 +52,6 @@
         delegate.user.password = self.passwordField.text;
     }
     
-    //Initializes the user. Currently creates a default user, but will eventually check the existing database.
     
     //Creates the tab bar controller. Won't change.
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
