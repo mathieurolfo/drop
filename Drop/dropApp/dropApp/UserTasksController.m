@@ -9,7 +9,7 @@
 #import "UserTasksController.h"
 #import "AppDelegate.h"
 #import "TaskDatabaseController.h"
-#import "UserTaskCell.h"
+#import "UserActionCell.h"
 #import "Action.h"
 
 @interface UserTasksController ()
@@ -30,7 +30,7 @@
     UIBarButtonItem *newTasksButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushTaskDatabaseController)];
     self.navigationItem.rightBarButtonItem = newTasksButton;
 
-    [self.tableView registerNib:[UINib nibWithNibName:@"UserTaskCell" bundle:nil] forCellReuseIdentifier:@"usercell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"UserActionCell" bundle:nil] forCellReuseIdentifier:@"usercell"];
     
 }
 
@@ -41,7 +41,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    UserTaskCell *taskCell = [tableView dequeueReusableCellWithIdentifier:@"usercell"];
+    UserActionCell *taskCell = [tableView dequeueReusableCellWithIdentifier:@"usercell"];
     Action *action = delegate.user.pinnedTasks[indexPath.row];
     taskCell.nameLabel.text = action.name;
     taskCell.dropLabel.text = [NSString stringWithFormat:@"%d", action.dropValue];

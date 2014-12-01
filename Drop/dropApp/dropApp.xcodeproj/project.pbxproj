@@ -27,14 +27,14 @@
 		4EFCA34E1A264F0200CA7663 /* TaskDatabaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA34C1A264F0200CA7663 /* TaskDatabaseController.xib */; };
 		4EFCA3571A2666C900CA7663 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA3551A2666C900CA7663 /* TaskCell.m */; };
 		4EFCA3581A2666C900CA7663 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA3561A2666C900CA7663 /* TaskCell.xib */; };
-		4EFCA35C1A27C6E000CA7663 /* UserTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA35A1A27C6E000CA7663 /* UserTaskCell.m */; };
-		4EFCA35D1A27C6E000CA7663 /* UserTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA35B1A27C6E000CA7663 /* UserTaskCell.xib */; };
 		4EFCA3611A2AB64900CA7663 /* CompletedTasksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA35F1A2AB64900CA7663 /* CompletedTasksController.m */; };
 		4EFCA3621A2AB64900CA7663 /* CompletedTasksController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA3601A2AB64900CA7663 /* CompletedTasksController.xib */; };
 		4EFCA3661A2BD95300CA7663 /* CompletedTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA3641A2BD95300CA7663 /* CompletedTaskCell.m */; };
 		4EFCA3671A2BD95300CA7663 /* CompletedTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA3651A2BD95300CA7663 /* CompletedTaskCell.xib */; };
 		4EFCA36A1A2BFB8700CA7663 /* TaskDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA3691A2BFB8700CA7663 /* TaskDatabase.m */; };
 		4EFCA36D1A2BFD8100CA7663 /* UserDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA36C1A2BFD8100CA7663 /* UserDatabase.m */; };
+		4EFCA3711A2C215A00CA7663 /* UserActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCA36F1A2C215A00CA7663 /* UserActionCell.m */; };
+		4EFCA3721A2C215A00CA7663 /* UserActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFCA3701A2C215A00CA7663 /* UserActionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +80,6 @@
 		4EFCA3541A2666C900CA7663 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
 		4EFCA3551A2666C900CA7663 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
 		4EFCA3561A2666C900CA7663 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
-		4EFCA3591A27C6E000CA7663 /* UserTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTaskCell.h; sourceTree = "<group>"; };
-		4EFCA35A1A27C6E000CA7663 /* UserTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTaskCell.m; sourceTree = "<group>"; };
-		4EFCA35B1A27C6E000CA7663 /* UserTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTaskCell.xib; sourceTree = "<group>"; };
 		4EFCA35E1A2AB64900CA7663 /* CompletedTasksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedTasksController.h; sourceTree = "<group>"; };
 		4EFCA35F1A2AB64900CA7663 /* CompletedTasksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedTasksController.m; sourceTree = "<group>"; };
 		4EFCA3601A2AB64900CA7663 /* CompletedTasksController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedTasksController.xib; sourceTree = "<group>"; };
@@ -93,6 +90,9 @@
 		4EFCA3691A2BFB8700CA7663 /* TaskDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDatabase.m; sourceTree = "<group>"; };
 		4EFCA36B1A2BFD8100CA7663 /* UserDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDatabase.h; sourceTree = "<group>"; };
 		4EFCA36C1A2BFD8100CA7663 /* UserDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDatabase.m; sourceTree = "<group>"; };
+		4EFCA36E1A2C215A00CA7663 /* UserActionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActionCell.h; sourceTree = "<group>"; };
+		4EFCA36F1A2C215A00CA7663 /* UserActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserActionCell.m; sourceTree = "<group>"; };
+		4EFCA3701A2C215A00CA7663 /* UserActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserActionCell.xib; sourceTree = "<group>"; };
 		5E1D5D3844F67151144694E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6756F3D22607CA67D9CDEF16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6AAB71C2E761477FD2BBE96E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,9 +181,9 @@
 				4EBE94141A1D4C90008E6F21 /* SideMenuController.h */,
 				4EBE94151A1D4C90008E6F21 /* SideMenuController.m */,
 				4EBE94161A1D4C90008E6F21 /* SideMenuController.xib */,
-				4EFCA3591A27C6E000CA7663 /* UserTaskCell.h */,
-				4EFCA35A1A27C6E000CA7663 /* UserTaskCell.m */,
-				4EFCA35B1A27C6E000CA7663 /* UserTaskCell.xib */,
+				4EFCA36E1A2C215A00CA7663 /* UserActionCell.h */,
+				4EFCA36F1A2C215A00CA7663 /* UserActionCell.m */,
+				4EFCA3701A2C215A00CA7663 /* UserActionCell.xib */,
 				4EFCA3541A2666C900CA7663 /* TaskCell.h */,
 				4EFCA3551A2666C900CA7663 /* TaskCell.m */,
 				4EFCA3561A2666C900CA7663 /* TaskCell.xib */,
@@ -309,8 +309,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EFCA3721A2C215A00CA7663 /* UserActionCell.xib in Resources */,
 				4EFCA3581A2666C900CA7663 /* TaskCell.xib in Resources */,
-				4EFCA35D1A27C6E000CA7663 /* UserTaskCell.xib in Resources */,
 				4EBE94181A1D4C90008E6F21 /* SideMenuController.xib in Resources */,
 				4EFCA3491A22C77A00CA7663 /* UserTasksController.xib in Resources */,
 				4EBE94221A1D5BDE008E6F21 /* PlantController.xib in Resources */,
@@ -378,12 +378,12 @@
 				4EBE94131A1D49EA008E6F21 /* User.m in Sources */,
 				4EFCA36A1A2BFB8700CA7663 /* TaskDatabase.m in Sources */,
 				4EFCA3611A2AB64900CA7663 /* CompletedTasksController.m in Sources */,
+				4EFCA3711A2C215A00CA7663 /* UserActionCell.m in Sources */,
 				4EC23AE11A197C0A001F0F48 /* LoginController.m in Sources */,
 				4EC23ABC1A1974F5001F0F48 /* AppDelegate.m in Sources */,
 				4EFCA34D1A264F0200CA7663 /* TaskDatabaseController.m in Sources */,
 				4EC23AB91A1974F5001F0F48 /* main.m in Sources */,
 				4EBE94171A1D4C90008E6F21 /* SideMenuController.m in Sources */,
-				4EFCA35C1A27C6E000CA7663 /* UserTaskCell.m in Sources */,
 				4EBE94211A1D5BDE008E6F21 /* PlantController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

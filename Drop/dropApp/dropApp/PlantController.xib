@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlantController">
             <connections>
                 <outlet property="currentDrops" destination="Hgo-cf-rxw" id="e4m-Pi-0s4"/>
+                <outlet property="plantInfoLabel" destination="QS8-Nq-9JD" id="fYC-cf-DF1"/>
                 <outlet property="plantView" destination="ThE-RJ-05f" id="ngq-aw-Xox"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="waterButton" destination="vSt-Zc-inm" id="q53-eR-Y7E"/>
