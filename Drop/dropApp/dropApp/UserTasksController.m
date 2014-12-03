@@ -48,6 +48,7 @@
     NSLog(@"%@", taskCell.dropLabel.text);
     taskCell.delegate = self;
     taskCell.cellIndex = indexPath.row;
+    
 
     return taskCell;
 }
@@ -58,6 +59,10 @@
     return [delegate.user.pinnedTasks count];
 }
 
+-(void)dismissAlert: (UIAlertView *)alert {
+    [alert dismissWithClickedButtonIndex:0 animated:YES];
+}
+
 -(void)didCompleteTaskAtIndex:(NSInteger)cellIndex
 {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
@@ -66,7 +71,7 @@
     delegate.user.lifetimeDrops += action.dropValue;
     delegate.user.currentDrops += action.dropValue;
     
-    //Need a notification here
+    
     
     //how to format to short style?
     action.dateAdded = [NSDate date];
@@ -77,6 +82,11 @@
 
     [self.tableView reloadData];
     [delegate.plantController refreshScreen];
+    
+    //Notification here
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Drops added" delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    [alert show];
+    [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:1.0f];
 }
 
 -(void)didRemoveTaskAtIndex:(NSInteger)cellIndex

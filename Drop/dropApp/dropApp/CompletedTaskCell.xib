@@ -16,13 +16,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlF-IR-KlQ">
-                        <rect key="frame" x="163" y="11" width="84" height="21"/>
+                        <rect key="frame" x="194" y="13" width="55" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2V-aD-gv2">
-                        <rect key="frame" x="281" y="12" width="22" height="21"/>
+                        <rect key="frame" x="281" y="13" width="22" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="22" id="MTT-1m-RIA"/>
                         </constraints>
@@ -31,9 +31,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKe-eg-3Je">
-                        <rect key="frame" x="22" y="11" width="93" height="21"/>
+                        <rect key="frame" x="22" y="13" width="139" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="93" id="3Te-uJ-yT9"/>
+                            <constraint firstAttribute="width" constant="139" id="3Te-uJ-yT9"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -41,15 +41,15 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="pKe-eg-3Je" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="9TM-Be-5CF"/>
-                    <constraint firstItem="pKe-eg-3Je" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BLz-P0-5mr"/>
+                    <constraint firstItem="pKe-eg-3Je" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="9TM-Be-5CF"/>
+                    <constraint firstItem="pKe-eg-3Je" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="1.5" id="BLz-P0-5mr"/>
                     <constraint firstItem="pKe-eg-3Je" firstAttribute="firstBaseline" secondItem="GlF-IR-KlQ" secondAttribute="firstBaseline" id="BW6-70-4n1"/>
                     <constraint firstItem="pKe-eg-3Je" firstAttribute="baseline" secondItem="GlF-IR-KlQ" secondAttribute="baseline" id="PEB-3J-gCR"/>
-                    <constraint firstItem="GlF-IR-KlQ" firstAttribute="leading" secondItem="pKe-eg-3Je" secondAttribute="trailing" constant="48" id="Wpd-mN-46P"/>
+                    <constraint firstItem="GlF-IR-KlQ" firstAttribute="leading" secondItem="pKe-eg-3Je" secondAttribute="trailing" constant="33" id="Wpd-mN-46P"/>
                     <constraint firstAttribute="trailingMargin" secondItem="L2V-aD-gv2" secondAttribute="trailing" constant="9" id="gYe-zJ-fGn"/>
-                    <constraint firstItem="L2V-aD-gv2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="iZH-Kg-elM"/>
+                    <constraint firstItem="L2V-aD-gv2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="iZH-Kg-elM"/>
                     <constraint firstItem="pKe-eg-3Je" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="ox8-ac-595"/>
-                    <constraint firstItem="L2V-aD-gv2" firstAttribute="leading" secondItem="GlF-IR-KlQ" secondAttribute="trailing" constant="34" id="phc-Cx-RXX"/>
+                    <constraint firstItem="L2V-aD-gv2" firstAttribute="leading" secondItem="GlF-IR-KlQ" secondAttribute="trailing" constant="32" id="phc-Cx-RXX"/>
                     <constraint firstAttribute="bottomMargin" secondItem="L2V-aD-gv2" secondAttribute="bottom" constant="2" id="xWF-q4-73l"/>
                 </constraints>
             </tableViewCellContentView>
@@ -58,7 +58,7 @@
                 <outlet property="taskDropLabel" destination="L2V-aD-gv2" id="gs0-Ke-Yj9"/>
                 <outlet property="taskNameLabel" destination="pKe-eg-3Je" id="Yhm-md-BJV"/>
             </connections>
-            <point key="canvasLocation" x="279" y="217"/>
+            <point key="canvasLocation" x="279" y="215"/>
         </tableViewCell>
     </objects>
 </document>

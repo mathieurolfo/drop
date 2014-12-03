@@ -48,10 +48,16 @@
     CompletedTaskCell *taskCell = [tableView dequeueReusableCellWithIdentifier:@"completedcell"];
     Action *taskAction = (delegate.user.completedTasks[indexPath.row]);
     taskCell.taskNameLabel.text = taskAction.name;
-    taskCell.taskDateLabel.text = [NSString stringWithFormat:@"%@", taskAction.dateAdded];
     taskCell.taskDropLabel.text = [NSString stringWithFormat:@"%d", taskAction.dropValue];
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"MM/dd/yy"];
+    NSString *formattedDate = [format stringFromDate:taskAction.dateAdded];
+    taskCell.taskDateLabel.text = formattedDate;
+    
+    [taskCell setUserInteractionEnabled:NO];
+    
     // Configure the cell...
-    NSLog(@"%@", taskAction.name);
     return taskCell;
 }
 

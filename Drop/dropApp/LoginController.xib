@@ -18,17 +18,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0Q-fh-tMV">
-                    <rect key="frame" x="365" y="469" width="43" height="30"/>
-                    <state key="normal" title="Log In">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="5DW-Za-slG"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTM-1L-2x4">
-                    <rect key="frame" x="206" y="467" width="65" height="34"/>
+                    <rect key="frame" x="210" y="467" width="65" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="65" id="bDB-HT-IeD"/>
                     </constraints>
@@ -38,14 +29,14 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo v2" translatesAutoresizingMaskIntoConstraints="NO" id="Tra-H6-VbW">
-                    <rect key="frame" x="130" y="61" width="341" height="256"/>
+                    <rect key="frame" x="179" y="53" width="242" height="181"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="256" id="cCZ-EI-xEE"/>
-                        <constraint firstAttribute="width" constant="341" id="jya-9f-HNb"/>
+                        <constraint firstAttribute="height" constant="181" id="cCZ-EI-xEE"/>
+                        <constraint firstAttribute="width" constant="242" id="jya-9f-HNb"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vT6-9i-Zbu">
-                    <rect key="frame" x="210" y="367" width="181" height="30"/>
+                    <rect key="frame" x="210" y="284" width="181" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -53,7 +44,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-M6-Llv">
-                    <rect key="frame" x="210" y="410" width="181" height="30"/>
+                    <rect key="frame" x="210" y="317" width="181" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="181" id="8d0-dw-G0z"/>
                     </constraints>
@@ -63,19 +54,28 @@
                         <outlet property="delegate" destination="-1" id="dat-Np-h6j"/>
                     </connections>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0Q-fh-tMV">
+                    <rect key="frame" x="348" y="469" width="43" height="30"/>
+                    <state key="normal" title="Log In">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="5DW-Za-slG"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Tra-H6-VbW" firstAttribute="centerX" secondItem="T0Q-fh-tMV" secondAttribute="centerX" constant="-86" id="2Kv-va-sVI"/>
+                <constraint firstItem="Tra-H6-VbW" firstAttribute="centerX" secondItem="T0Q-fh-tMV" secondAttribute="centerX" constant="-69.5" id="2Kv-va-sVI"/>
                 <constraint firstAttribute="centerX" secondItem="vT6-9i-Zbu" secondAttribute="centerX" id="A9f-NU-Pm7"/>
-                <constraint firstItem="T0Q-fh-tMV" firstAttribute="leading" secondItem="hTM-1L-2x4" secondAttribute="trailing" constant="94" id="BwH-cw-XWr"/>
-                <constraint firstItem="Tra-H6-VbW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="61" id="CU7-C6-u9j"/>
-                <constraint firstItem="hTM-1L-2x4" firstAttribute="top" secondItem="ehZ-M6-Llv" secondAttribute="bottom" constant="27" id="IuK-KQ-Kbd"/>
+                <constraint firstItem="T0Q-fh-tMV" firstAttribute="leading" secondItem="hTM-1L-2x4" secondAttribute="trailing" constant="73" id="BwH-cw-XWr"/>
+                <constraint firstItem="Tra-H6-VbW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="53" id="CU7-C6-u9j"/>
+                <constraint firstItem="hTM-1L-2x4" firstAttribute="top" secondItem="ehZ-M6-Llv" secondAttribute="bottom" constant="120" id="IuK-KQ-Kbd"/>
                 <constraint firstAttribute="bottom" secondItem="hTM-1L-2x4" secondAttribute="bottom" constant="99" id="MlH-Rw-Hmv"/>
                 <constraint firstAttribute="bottom" secondItem="T0Q-fh-tMV" secondAttribute="bottom" constant="101" id="SYB-p6-kes"/>
-                <constraint firstAttribute="centerX" secondItem="T0Q-fh-tMV" secondAttribute="centerX" constant="-86.5" id="Uau-ZO-p6i"/>
+                <constraint firstAttribute="centerX" secondItem="T0Q-fh-tMV" secondAttribute="centerX" constant="-69.5" id="Uau-ZO-p6i"/>
                 <constraint firstItem="hTM-1L-2x4" firstAttribute="baseline" secondItem="T0Q-fh-tMV" secondAttribute="firstBaseline" id="gNN-Q2-Zvn"/>
-                <constraint firstItem="ehZ-M6-Llv" firstAttribute="top" secondItem="vT6-9i-Zbu" secondAttribute="bottom" constant="13" id="jRz-oq-sin"/>
+                <constraint firstItem="ehZ-M6-Llv" firstAttribute="top" secondItem="vT6-9i-Zbu" secondAttribute="bottom" constant="3" id="jRz-oq-sin"/>
                 <constraint firstItem="hTM-1L-2x4" firstAttribute="firstBaseline" secondItem="T0Q-fh-tMV" secondAttribute="baseline" id="krs-Ah-AC2"/>
                 <constraint firstAttribute="centerX" secondItem="ehZ-M6-Llv" secondAttribute="centerX" id="r9s-3j-LPo"/>
                 <constraint firstItem="ehZ-M6-Llv" firstAttribute="leading" secondItem="vT6-9i-Zbu" secondAttribute="leading" id="tUj-U8-wd1"/>

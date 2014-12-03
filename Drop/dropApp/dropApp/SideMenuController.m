@@ -75,12 +75,13 @@
             }
     }
     cell.backgroundColor = [UIColor whiteColor];
+    cell.textLabel.font = [cell.textLabel.font fontWithSize:14.0];
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 40.0;
+    return 35.0;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

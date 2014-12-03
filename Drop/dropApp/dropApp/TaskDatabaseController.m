@@ -31,13 +31,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)dismissAlert: (UIAlertView *)alert {
+    [alert dismissWithClickedButtonIndex:0 animated:YES];
+}
+
 -(void)didPinTaskAtIndex:(NSInteger)cellIndex
 {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     Action *action = delegate.tasksDatabase[cellIndex];
     [delegate.user.pinnedTasks addObject:action];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Task pinned" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    [alert show];
+    [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:1.0f];
     
 }
+
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -54,7 +63,6 @@
     taskCell.dropLabel.text = [NSString stringWithFormat:@"%d", taskAction.dropValue];
     taskCell.cellIndex = indexPath.row;
     taskCell.delegate = self;
-    
     
     return (UITableViewCell *)taskCell;
 }

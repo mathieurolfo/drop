@@ -14,7 +14,6 @@
     // Initialization code
 }
 - (IBAction)buttonClicked:(id)sender {
-    NSLog(@"button clicked, code inside taskCell, at index %d, %@", self.cellIndex, self.delegate);
     [self.delegate didPinTaskAtIndex:self.cellIndex];
     
 }

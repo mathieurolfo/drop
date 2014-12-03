@@ -15,7 +15,7 @@
 @interface LoginController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-
+@property (strong, nonatomic) UIGestureRecognizer *tapper;
 @end
 
 @implementation LoginController
@@ -26,6 +26,15 @@
     self.usernameField.returnKeyType = UIReturnKeyDone;
     self.passwordField.returnKeyType = UIReturnKeyDone;
     self.passwordField.secureTextEntry = YES;
+    
+    _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    _tapper.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:_tapper];
+    
+}
+
+-(void)handleTap:(UITapGestureRecognizer *)sender {
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,8 +49,6 @@
     
     if (self.usernameField.text.length == 0 || self.passwordField.text.length == 0) {
         NSLog(@"No valid credentials presented");
-        self.passwordField.text = @"";
-        self.usernameField.text = @"";
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup didn't work!" message:@"One of your fields was left blank." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
         [alert show];
         return;
@@ -49,8 +56,6 @@
     
     if (testUser) {
         NSLog(@"this is an existing user");
-        self.passwordField.text = @"";
-        self.usernameField.text = @"";
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup didn't work!" message:@"This user already exists." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
         [alert show];
         return;
@@ -103,8 +108,6 @@
     
     if (self.usernameField.text.length == 0 || self.usernameField.text.length == 0) {
         NSLog(@"No valid credentials presented");
-        self.passwordField.text = @"";
-        self.usernameField.text = @"";
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login didn't work!" message:@"One of your fields was left blank." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
         [alert show];
         return;
@@ -114,8 +117,7 @@
         NSLog(@"this is an existing user");
         if (![testUser.password isEqualToString:self.passwordField.text]) {
             NSLog(@"incorrect password for user");
-            self.passwordField.text = @"";
-            self.usernameField.text = @"";
+        
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login didn't work!" message:@"The password does not match what is on file for that user." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
             [alert show];
             return;
@@ -124,8 +126,6 @@
         }
     } else {
         NSLog(@"this is a brand new user");
-        self.passwordField.text = @"";
-        self.usernameField.text = @"";
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login didn't work!" message:@"This user does not exist." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
         [alert show];
         return;
