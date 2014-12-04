@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface User : NSObject <NSCoding>
 
-@property (nonatomic) NSString* username;
-@property (nonatomic) NSString* password; // we aren't worried about security so keep in plaintext
+
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *password;
+@property (nonatomic) int currentDrops;
+@property (nonatomic) int lifetimeDrops;
+@property (nonatomic) int dropsWatered;
+@property (strong, nonatomic) NSMutableArray *pinnedTasks;
+@property (strong, nonatomic) NSMutableArray *completedTasks;
+
 
 @property (nonatomic) int currentDrops; // +1 each login; more for completed tasks
 @property (nonatomic) int lifetimeDrops; // incremented with all completed tasks

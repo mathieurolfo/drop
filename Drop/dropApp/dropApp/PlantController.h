@@ -11,8 +11,10 @@
 @interface PlantController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *currentDrops;
-@property (weak, nonatomic) IBOutlet UILabel *lifetimeDrops;
 @property (weak, nonatomic) IBOutlet UIImageView *plantView;
 @property (weak, nonatomic) IBOutlet UIButton *waterButton;
+@property (weak, nonatomic) IBOutlet UILabel *plantInfoLabel;
+
+-(void)refreshScreen;
 
 @end

@@ -11,20 +11,31 @@
 
 @interface PlantController ()
 
+@property (strong, nonatomic) NSArray *plantLevelArray;
+@property (strong, nonatomic) NSArray *plantImagesArray;
+
 @end
 
 @implementation PlantController
+
+-(instancetype)init {
+    self = [super init];
+    if (self) {
+        self.plantLevelArray = [NSArray arrayWithObjects:0, 1, 5, nil];
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    UIImage *image = [UIImage imageNamed:@"plantA.png"];
+    
+    UIImage *image = [self getPlantImage];
     [self.plantView setImage:image];
     
     self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
-    self.lifetimeDrops.text = [NSString stringWithFormat:@"Lifetime Drops: %d", delegate.user.lifetimeDrops];
-    
     
     UIImage *canImage = [UIImage imageNamed:@"wateringCan.png"];
     UIImage *resizedPlant = [UIImage imageWithCGImage:[canImage CGImage]
@@ -33,15 +44,22 @@
     [self.waterButton setBackgroundImage:resizedPlant forState:UIControlStateNormal];
 
     self.title = @"Your Plant";
-    //UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:delegate action:@selector("menuButtonClicked")];
-    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(menuButtonClicked)];
+    
+    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:delegate action:@selector(menuButtonClicked)];
     self.navigationItem.leftBarButtonItem = menuButton;
-    //UIBarButtonItem *item = [[UIBarButtonItem alloc] initwit]
 
 }
 
-- (void)menuButtonClicked {
-    
+-(UIImage *)getPlantImage {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    int drops = delegate.user.dropsWatered;
+    if (drops < 1) {
+        return [UIImage imageNamed:@"plantA.png"];
+    } else if (drops < 5) {
+        return [UIImage imageNamed:@"plantB.png"];
+    } else {
+        return [UIImage imageNamed:@"plantC.png"];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,22 +69,24 @@
 
 - (IBAction)waterButtonClicked:(id)sender {
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    NSLog(@"%f %f", self.plantView.bounds.size.width, self.plantView.bounds.size.height);
     if (delegate.user.currentDrops > 0) {
         delegate.user.currentDrops -= 1;
         delegate.user.dropsWatered += 1;
     }
-    if (delegate.user.dropsWatered > 0 && delegate.user.dropsWatered <= 5) {
-        self.plantView.image = [UIImage imageNamed:@"plantB.png"];
-    }
     
-    else if (delegate.user.dropsWatered > 5 && delegate.user.dropsWatered <= 10) {
-        self.plantView.image = [UIImage imageNamed:@"plantC.png"];
-    }
+    
+    self.plantView.image = [self getPlantImage];
     
     self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
     [self.view setNeedsDisplay];
-    NSLog(@"%f %f", self.plantView.bounds.size.width, self.plantView.bounds.size.height);
+    
+}
+
+-(void)refreshScreen {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
+    NSLog(@"refreshScreen");
+    [self.view setNeedsDisplay];
 }
 
 /*

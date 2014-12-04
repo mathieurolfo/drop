@@ -12,6 +12,10 @@
 #import "LoginController.h"
 #import "PlantController.h"
 #import "User.h"
+#import "Action.h"
+#import "TaskDatabase.h"
+#import "SideMenuController.h"
+#import "UserDatabase.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +23,15 @@
 
 @implementation AppDelegate
 
+-(void)menuButtonClicked
+{
+
+    if ([self.drawer openSide] == MMDrawerSideLeft) {
+        [self.drawer closeDrawerAnimated:YES completion:nil];
+    } else if ([self.drawer openSide] == MMDrawerSideNone) {
+        [self.drawer openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -29,14 +42,50 @@
     LoginController *login = [[LoginController alloc] init];
     self.login = login;
     
-    self.drawer = [[MMDrawerController alloc] initWithCenterViewController:login leftDrawerViewController:nil];
+    SideMenuController *sideMenu = [[SideMenuController alloc] init];
+    self.drawer = [[MMDrawerController alloc] initWithCenterViewController:login leftDrawerViewController:sideMenu];
+    [self.drawer setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:4.0]];
+    [self.drawer setShouldStretchDrawer:NO];
+    [self.drawer setShowsShadow:NO];
+    self.drawer.maximumLeftDrawerWidth = [UIScreen mainScreen].bounds.size.width * 2.0 / 3;
+
     
     [window setRootViewController:self.drawer];
     [window makeKeyAndVisible];
     [self setWindow:window];
 
+    TaskDatabase *database = [[TaskDatabase alloc] init];
+    self.tasksDatabase = [database loadDatabase];
+   
+    self.userDatabase = [[UserDatabase alloc] init];
     
     return YES;
+}
+
+-(void)loadUserbase {
+    
+}
+
+
+-(void)enableDrawerAccess
+{
+    self.drawer.openDrawerGestureModeMask = MMOpenDrawerGestureModeBezelPanningCenterView |
+    MMOpenDrawerGestureModePanningNavigationBar;
+    
+    self.drawer.closeDrawerGestureModeMask = MMCloseDrawerGestureModeTapCenterView |
+    MMCloseDrawerGestureModePanningDrawerView |
+    MMCloseDrawerGestureModePanningCenterView |
+    MMCloseDrawerGestureModeTapNavigationBar |
+    MMCloseDrawerGestureModePanningNavigationBar;
+    
+}
+
+-(void)disableDrawerAccess
+{
+    
+    self.drawer.openDrawerGestureModeMask = 0;
+    self.drawer.closeDrawerGestureModeMask = 0;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -47,6 +96,12 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    BOOL success = [self.userDatabase saveChanges];
+    if (success) {
+        NSLog(@"Saving success");
+    } else {
+        NSLog(@"Saving failure");
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
