@@ -1,9 +1,10 @@
 PODS:
+  - CMPopTipView (2.2.0)
   - MMDrawerController (0.5.7):
-    - MMDrawerController/Core
-    - MMDrawerController/MMDrawerBarButtonItem
-    - MMDrawerController/MMDrawerVisualStates
-    - MMDrawerController/Subclass
+    - MMDrawerController/Core (= 0.5.7)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.5.7)
+    - MMDrawerController/MMDrawerVisualStates (= 0.5.7)
+    - MMDrawerController/Subclass (= 0.5.7)
   - MMDrawerController/Core (0.5.7)
   - MMDrawerController/MMDrawerBarButtonItem (0.5.7):
     - MMDrawerController/Core
@@ -13,9 +14,11 @@ PODS:
     - MMDrawerController/Core
 
 DEPENDENCIES:
+  - CMPopTipView
   - MMDrawerController
 
 SPEC CHECKSUMS:
+  CMPopTipView: f731ea93316c4f964d3d5d8e71b4ba0ae30bf5a4
   MMDrawerController: c3ab7a318ddc7e2bcd133139c3161af08c6e1197
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.35.0

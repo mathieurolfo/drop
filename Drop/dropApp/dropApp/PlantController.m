@@ -8,6 +8,7 @@
 
 #import "PlantController.h"
 #import "AppDelegate.h"
+#import "CMPopTipView.h"
 
 @interface PlantController ()
 
@@ -21,8 +22,7 @@
 -(instancetype)init {
     self = [super init];
     if (self) {
-        self.plantLevelArray = [NSArray arrayWithObjects:0, 1, 5, nil];
-        
+        self.plantLevelArray = [[NSArray alloc] initWithObjects:0, 1, 5, 15, 40, nil];
     }
     return self;
 }
@@ -45,8 +45,17 @@
 
     self.title = @"Your Plant";
     
-    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:delegate action:@selector(menuButtonClicked)];
+    UIImage *hamburgerIcon = [UIImage imageNamed:@"hamburger.png"];
+    UIImage *resizedHam = [UIImage imageWithCGImage:[hamburgerIcon CGImage]
+                                                scale:55.0/(hamburgerIcon.scale) orientation:(hamburgerIcon.imageOrientation)];
+    
+    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithImage:resizedHam style:UIBarButtonItemStylePlain  target:delegate action:@selector(menuButtonClicked)];
+    menuButton.tintColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
     self.navigationItem.leftBarButtonItem = menuButton;
+    
+    [self performSelector:@selector(checkNeedsTutorial) withObject:nil afterDelay:0.75f];
+
+    
 
 }
 
@@ -57,9 +66,109 @@
         return [UIImage imageNamed:@"plantA.png"];
     } else if (drops < 5) {
         return [UIImage imageNamed:@"plantB.png"];
-    } else {
+    } else if (drops < 15){
         return [UIImage imageNamed:@"plantC.png"];
+    } else if (drops < 40) {
+         return [UIImage imageNamed:@"plantD.png"];
+    } else {
+        return [UIImage imageNamed:@"plantE.png"];
     }
+}
+
+-(void)checkNeedsTutorial {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    if (delegate.user.dropsWatered == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"Complete a quick tutorial to get your first couple drops." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Show me around", nil];
+        [alert show];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self completeTutorial];
+    }
+}
+
+-(void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView
+{
+    
+}
+
+-(void)completeTutorial {
+    
+    float startDelay = 0.5;
+    float displayTime = 2.0;
+    [self performSelector:@selector(firstPop) withObject:nil afterDelay:startDelay];
+    [self performSelector:@selector(secondPop) withObject:nil afterDelay:displayTime+2*startDelay];
+    
+    [self performSelector:@selector(thirdPop) withObject:nil afterDelay:2*displayTime+3*startDelay];
+    
+    [self performSelector:@selector(fourthPop) withObject:nil afterDelay:3*displayTime+4*startDelay];
+    [self performSelector:@selector(rewardDrops) withObject:nil afterDelay:4*displayTime+6*startDelay];
+    
+}
+
+-(void)rewardDrops {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    delegate.user.currentDrops += 3;
+    self.currentDrops.text = [NSString stringWithFormat:@"Current Drops: %d", delegate.user.currentDrops];
+    [self.view setNeedsDisplay];
+}
+
+-(void)firstPop {
+    NSString *message = @"Here is your plant.";
+    CMPopTipView *popTipView1 = [[CMPopTipView alloc] initWithMessage:message];
+    popTipView1.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    popTipView1.delegate = self;
+    popTipView1.has3DStyle = NO;
+    popTipView1.borderColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    popTipView1.hasGradientBackground = NO;
+    [popTipView1 presentPointingAtView:self.plantView inView:self.view animated:YES];
+    [self performSelector:@selector(dismissPopView:) withObject:popTipView1 afterDelay:2];
+}
+
+-(void)secondPop {
+    NSString *message = @"Water your plant by clicking on the watering can, and watch it grow!";
+    CMPopTipView *popTipView2 = [[CMPopTipView alloc] initWithMessage:message];
+    popTipView2.delegate = self;
+    popTipView2.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    popTipView2.hasGradientBackground = NO;
+    popTipView2.borderColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    popTipView2.hasGradientBackground = NO;
+    popTipView2.has3DStyle = NO;
+    [popTipView2 presentPointingAtView:self.waterButton inView:self.view animated:YES];
+    [self performSelector:@selector(dismissPopView:) withObject:popTipView2 afterDelay:2];
+
+}
+
+-(void)thirdPop {
+    NSString *message = @"Get more drops for your plant by completing real-world water saving tasks.";
+    CMPopTipView *popTipView2 = [[CMPopTipView alloc] initWithMessage:message];
+    popTipView2.delegate = self;
+    popTipView2.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    popTipView2.borderColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    popTipView2.hasGradientBackground = NO;
+    popTipView2.has3DStyle = NO;
+    [popTipView2 presentPointingAtView:self.barButtonLabel inView:self.view animated:YES];
+    [self performSelector:@selector(dismissPopView:) withObject:popTipView2 afterDelay:2];
+
+}
+
+-(void)fourthPop {
+    NSString *message = @"Have fun growing your plant and saving water in the process!";
+    CMPopTipView *popTipView2 = [[CMPopTipView alloc] initWithMessage:message];
+    popTipView2.delegate = self;
+    popTipView2.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    popTipView2.borderColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    popTipView2.hasGradientBackground = NO;
+    popTipView2.has3DStyle = NO;
+    [popTipView2 presentPointingAtView:self.currentDrops inView:self.view animated:YES];
+    [self performSelector:@selector(dismissPopView:) withObject:popTipView2 afterDelay:2.5];
+}
+
+-(void)dismissPopView: (CMPopTipView *)pop {
+    [pop dismissAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

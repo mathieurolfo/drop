@@ -11,7 +11,7 @@
 #import "PlantController.h"
 #import "UserTasksController.h"
 #import "User.h"
-
+#import <QuartzCore/QuartzCore.h>
 @interface LoginController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
@@ -19,6 +19,7 @@
 @end
 
 @implementation LoginController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +31,16 @@
     _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     _tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:_tapper];
+    //self.view.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    
+    self.login.layer.cornerRadius = 10;
+    self.login.clipsToBounds = YES;
+    self.signup.layer.cornerRadius = 10;
+    self.signup.clipsToBounds = YES;
+    self.login.backgroundColor = [UIColor colorWithRed:52.0/255 green:162.0/255 blue:44.0/255 alpha:1];
+    self.signup.backgroundColor = [UIColor colorWithRed:52.0/255 green:162.0/255 blue:44.0/255 alpha:1];
+    self.login.titleLabel.textColor = [UIColor blackColor];
+    self.signup.titleLabel.textColor = [UIColor blackColor];
     
 }
 
@@ -106,6 +117,8 @@
     
     User *testUser = [delegate.userDatabase.userDatabase objectForKey:self.usernameField.text];
     
+    
+    
     if (self.usernameField.text.length == 0 || self.usernameField.text.length == 0) {
         NSLog(@"No valid credentials presented");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login didn't work!" message:@"One of your fields was left blank." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
@@ -131,6 +144,8 @@
         return;
         
     }
+     
+    delegate.user = testUser;
     
     
     //Creates the tab bar controller. Won't change.

@@ -20,7 +20,7 @@
                     <rect key="frame" x="-47" y="635" width="94" height="29"/>
                 </stepper>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="L3X-2C-G0L">
-                    <rect key="frame" x="0.0" y="74" width="600" height="576"/>
+                    <rect key="frame" x="0.0" y="65" width="600" height="585"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="xpz-l3-Bvv"/>
@@ -39,6 +39,7 @@
                 <constraint firstItem="w9u-H2-7tc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="J4E-9e-uPu"/>
                 <constraint firstItem="w9u-H2-7tc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="bK2-zH-Sxp"/>
             </constraints>
+            <point key="canvasLocation" x="305" y="352"/>
         </view>
     </objects>
 </document>

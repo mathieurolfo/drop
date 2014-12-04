@@ -20,9 +20,6 @@
 @property (strong, nonatomic) NSMutableArray *completedTasks;
 
 
-@property (nonatomic) int currentDrops; // +1 each login; more for completed tasks
-@property (nonatomic) int lifetimeDrops; // incremented with all completed tasks
-@property (nonatomic) int dropsWatered; // incremented for each click of watering can
 
 // NSMutableSet for ease of checking membership and ability to add/subtract
 @property (nonatomic) NSMutableSet* pinnedActions;

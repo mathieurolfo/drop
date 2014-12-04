@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController">
             <connections>
+                <outlet property="login" destination="T0Q-fh-tMV" id="bBb-gy-ace"/>
                 <outlet property="passwordField" destination="ehZ-M6-Llv" id="rsW-XZ-NSD"/>
+                <outlet property="signup" destination="hTM-1L-2x4" id="bLO-kF-AHV"/>
                 <outlet property="usernameField" destination="vT6-9i-Zbu" id="GV0-aW-DZ1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,12 +19,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTM-1L-2x4">
-                    <rect key="frame" x="210" y="467" width="65" height="34"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="65" id="bDB-HT-IeD"/>
-                    </constraints>
-                    <state key="normal" title="Sign Up"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTM-1L-2x4">
+                    <rect key="frame" x="268" y="480" width="65" height="34"/>
+                    <state key="normal" title="Sign Up">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="signUpPressed:" destination="-1" eventType="touchUpInside" id="Mhb-Ho-PKn"/>
                     </connections>
@@ -31,22 +31,27 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo v2" translatesAutoresizingMaskIntoConstraints="NO" id="Tra-H6-VbW">
                     <rect key="frame" x="179" y="53" width="242" height="181"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="181" id="cCZ-EI-xEE"/>
-                        <constraint firstAttribute="width" constant="242" id="jya-9f-HNb"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="242" id="6yc-5k-wvL"/>
+                        <constraint firstAttribute="width" constant="242" id="Jqj-w3-dza"/>
+                        <constraint firstAttribute="height" constant="181" id="M7F-HD-2nB"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vT6-9i-Zbu">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vT6-9i-Zbu">
                     <rect key="frame" x="210" y="284" width="181" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="181" id="Dty-Rp-yle"/>
+                        <constraint firstAttribute="height" constant="30" id="QKX-dC-e2A"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="h8G-cB-KF2"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-M6-Llv">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-M6-Llv">
                     <rect key="frame" x="210" y="317" width="181" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="181" id="8d0-dw-G0z"/>
+                        <constraint firstAttribute="height" constant="30" id="wiQ-Wh-tsn"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -54,9 +59,10 @@
                         <outlet property="delegate" destination="-1" id="dat-Np-h6j"/>
                     </connections>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0Q-fh-tMV">
-                    <rect key="frame" x="348" y="469" width="43" height="30"/>
-                    <state key="normal" title="Log In">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0Q-fh-tMV">
+                    <rect key="frame" x="274" y="435" width="52" height="34"/>
+                    <state key="normal" title=" Log In ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -66,24 +72,16 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Tra-H6-VbW" firstAttribute="centerX" secondItem="T0Q-fh-tMV" secondAttribute="centerX" constant="-69.5" id="2Kv-va-sVI"/>
-                <constraint firstAttribute="centerX" secondItem="vT6-9i-Zbu" secondAttribute="centerX" id="A9f-NU-Pm7"/>
-                <constraint firstItem="T0Q-fh-tMV" firstAttribute="leading" secondItem="hTM-1L-2x4" secondAttribute="trailing" constant="73" id="BwH-cw-XWr"/>
-                <constraint firstItem="Tra-H6-VbW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="53" id="CU7-C6-u9j"/>
-                <constraint firstItem="hTM-1L-2x4" firstAttribute="top" secondItem="ehZ-M6-Llv" secondAttribute="bottom" constant="120" id="IuK-KQ-Kbd"/>
-                <constraint firstAttribute="bottom" secondItem="hTM-1L-2x4" secondAttribute="bottom" constant="99" id="MlH-Rw-Hmv"/>
-                <constraint firstAttribute="bottom" secondItem="T0Q-fh-tMV" secondAttribute="bottom" constant="101" id="SYB-p6-kes"/>
-                <constraint firstAttribute="centerX" secondItem="T0Q-fh-tMV" secondAttribute="centerX" constant="-69.5" id="Uau-ZO-p6i"/>
-                <constraint firstItem="hTM-1L-2x4" firstAttribute="baseline" secondItem="T0Q-fh-tMV" secondAttribute="firstBaseline" id="gNN-Q2-Zvn"/>
-                <constraint firstItem="ehZ-M6-Llv" firstAttribute="top" secondItem="vT6-9i-Zbu" secondAttribute="bottom" constant="3" id="jRz-oq-sin"/>
-                <constraint firstItem="hTM-1L-2x4" firstAttribute="firstBaseline" secondItem="T0Q-fh-tMV" secondAttribute="baseline" id="krs-Ah-AC2"/>
-                <constraint firstAttribute="centerX" secondItem="ehZ-M6-Llv" secondAttribute="centerX" id="r9s-3j-LPo"/>
-                <constraint firstItem="ehZ-M6-Llv" firstAttribute="leading" secondItem="vT6-9i-Zbu" secondAttribute="leading" id="tUj-U8-wd1"/>
-                <constraint firstItem="ehZ-M6-Llv" firstAttribute="trailing" secondItem="vT6-9i-Zbu" secondAttribute="trailing" id="xVZ-6O-mhv"/>
+                <constraint firstAttribute="centerX" secondItem="vT6-9i-Zbu" secondAttribute="centerX" id="4ze-ee-qln"/>
+                <constraint firstAttribute="centerX" secondItem="Tra-H6-VbW" secondAttribute="centerX" id="Efq-gm-nLk"/>
+                <constraint firstItem="Tra-H6-VbW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="53" id="NTJ-4A-Fn9"/>
+                <constraint firstAttribute="centerX" secondItem="T0Q-fh-tMV" secondAttribute="centerX" id="WUs-4W-LYp"/>
+                <constraint firstAttribute="centerX" secondItem="ehZ-M6-Llv" secondAttribute="centerX" id="i3d-OK-Faa"/>
+                <constraint firstAttribute="centerX" secondItem="hTM-1L-2x4" secondAttribute="centerX" id="mOe-YR-oNc"/>
             </constraints>
         </view>
     </objects>
     <resources>
-        <image name="Logo v2" width="524" height="393"/>
+        <image name="Logo v2" width="262" height="196"/>
     </resources>
 </document>

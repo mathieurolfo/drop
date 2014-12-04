@@ -16,11 +16,10 @@
 -(id)init {
     if(self = [super init]) {
 
-        _currentDrops = 10;
+        _currentDrops = 0;
         _lifetimeDrops = _currentDrops;
         _pinnedTasks = [[NSMutableArray alloc] init];
         _completedTasks = [[NSMutableArray alloc] init];
->>>>>>> matt_working_version
     }
     return self;
 }
