@@ -18,5 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *barButtonLabel;
 
 -(void)refreshScreen;
+-(void) setPlantText;
+-(void) completeTutorial;
 
 @end
+

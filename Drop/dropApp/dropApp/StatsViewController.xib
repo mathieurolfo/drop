@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatsViewController">
+            <connections>
+                <outlet property="currentDropsLabel" destination="Ktb-UR-OHN" id="Mgw-3l-3ZA"/>
+                <outlet property="lifetimeDropsLabel" destination="DEg-u1-zF6" id="iNW-cA-Vzk"/>
+                <outlet property="messageText" destination="sjp-q5-2Rw" id="aC8-I7-9cs"/>
+                <outlet property="usernameLabel" destination="An4-oY-BFR" id="CPV-bj-xW3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4gaaS" translatesAutoresizingMaskIntoConstraints="NO" id="qpD-10-Cz5">
+                    <rect key="frame" x="175" y="332" width="251" height="207"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="251" id="sO5-vj-sbp"/>
+                        <constraint firstAttribute="height" constant="207" id="tZh-Pf-iaX"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="You are just beginning your water saving quest. Keep completing tasks to grow your plant and develop eco-friendly habits!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sjp-q5-2Rw">
+                    <rect key="frame" x="180" y="168" width="240" height="108"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="108" id="2Kq-Jr-p7P"/>
+                        <constraint firstAttribute="width" constant="240" id="dVn-ZX-VRE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEg-u1-zF6">
+                    <rect key="frame" x="282" y="141" width="36" height="18"/>
+                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktb-UR-OHN">
+                    <rect key="frame" x="282" y="119" width="36" height="18"/>
+                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="An4-oY-BFR">
+                    <rect key="frame" x="282" y="96" width="36" height="18"/>
+                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drops over Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyF-wK-6eq">
+                    <rect key="frame" x="249" y="306" width="106" height="18"/>
+                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="JyF-wK-6eq" secondAttribute="centerX" constant="-1.5" id="0kp-mC-KNj"/>
+                <constraint firstAttribute="centerX" secondItem="Ktb-UR-OHN" secondAttribute="centerX" id="EcI-PF-kWh"/>
+                <constraint firstItem="sjp-q5-2Rw" firstAttribute="top" secondItem="DEg-u1-zF6" secondAttribute="bottom" constant="9" id="ICi-Io-IdI"/>
+                <constraint firstAttribute="centerX" secondItem="An4-oY-BFR" secondAttribute="centerX" id="Lhz-HU-R9b"/>
+                <constraint firstItem="Ktb-UR-OHN" firstAttribute="top" secondItem="An4-oY-BFR" secondAttribute="bottom" constant="5" id="Sxg-sG-RJW"/>
+                <constraint firstAttribute="centerX" secondItem="DEg-u1-zF6" secondAttribute="centerX" id="U8v-vd-zuu"/>
+                <constraint firstAttribute="centerX" secondItem="sjp-q5-2Rw" secondAttribute="centerX" id="VV4-Va-V9E"/>
+                <constraint firstItem="qpD-10-Cz5" firstAttribute="top" secondItem="JyF-wK-6eq" secondAttribute="bottom" constant="9" id="Vwf-R1-vNH"/>
+                <constraint firstAttribute="bottom" secondItem="qpD-10-Cz5" secondAttribute="bottom" constant="61" id="m8G-z1-9hg"/>
+                <constraint firstItem="DEg-u1-zF6" firstAttribute="top" secondItem="Ktb-UR-OHN" secondAttribute="bottom" constant="5" id="mOK-Lh-ndn"/>
+                <constraint firstItem="qpD-10-Cz5" firstAttribute="centerX" secondItem="sjp-q5-2Rw" secondAttribute="centerX" id="rFv-6j-gIC"/>
+                <constraint firstItem="An4-oY-BFR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="96" id="rpv-Np-b8O"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="4gaaS" width="297" height="245"/>
+    </resources>
+</document>

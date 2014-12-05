@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UserActionCell.h"
+#import "CMPopTipView.h"
 
 @interface UserTasksController : UIViewController <UITableViewDataSource, UITableViewDelegate, UserActionCellDelegate>
 

@@ -26,6 +26,7 @@
 @property (strong, nonatomic) UINavigationController *tasksNav;
 @property (strong, nonatomic) NSArray *tasksDatabase;
 @property (strong, nonatomic) UserDatabase *userDatabase;
+@property (nonatomic) int *plantLevelArray;
 
 -(void)menuButtonClicked;
 -(void)enableDrawerAccess;

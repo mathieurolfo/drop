@@ -15,14 +15,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRH-Mk-hnX">
-                        <rect key="frame" x="48" y="13" width="36" height="17"/>
+                        <rect key="frame" x="53" y="13" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSv-Y8-c4E">
-                        <rect key="frame" x="8" y="7" width="30" height="30"/>
-                        <state key="normal" title="+">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfq-by-Rvc">
+                        <rect key="frame" x="285" y="13" width="27" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSv-Y8-c4E">
+                        <rect key="frame" x="10" y="12" width="26" height="21"/>
+                        <state key="normal" image="noun_1490">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
@@ -30,16 +36,14 @@
                             <action selector="buttonClicked:" destination="-2" eventType="touchUpInside" id="sfm-AQ-Qdb"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfq-by-Rvc">
-                        <rect key="frame" x="285" y="13" width="27" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="TSv-Y8-c4E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="1bo-Um-2c0"/>
                     <constraint firstAttribute="centerY" secondItem="fRH-Mk-hnX" secondAttribute="centerY" id="5sI-M7-oPQ"/>
-                    <constraint firstItem="fRH-Mk-hnX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="40" id="DyC-yK-qBW"/>
+                    <constraint firstItem="TSv-Y8-c4E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="7eA-bN-gOW"/>
+                    <constraint firstItem="fRH-Mk-hnX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="45" id="DyC-yK-qBW"/>
+                    <constraint firstAttribute="centerY" secondItem="TSv-Y8-c4E" secondAttribute="centerY" constant="-0.5" id="MCW-NS-lcP"/>
+                    <constraint firstItem="fRH-Mk-hnX" firstAttribute="leading" secondItem="TSv-Y8-c4E" secondAttribute="trailing" constant="17" id="zs0-ng-VK0"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -47,7 +51,10 @@
                 <outlet property="nameLabel" destination="fRH-Mk-hnX" id="x1k-8G-chx"/>
                 <outlet property="pinTaskButton" destination="TSv-Y8-c4E" id="tBk-Fd-eWF"/>
             </connections>
-            <point key="canvasLocation" x="266" y="217"/>
+            <point key="canvasLocation" x="266" y="215"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="noun_1490" width="40" height="40"/>
+    </resources>
 </document>

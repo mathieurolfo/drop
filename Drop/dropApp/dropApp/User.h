@@ -18,6 +18,7 @@
 @property (nonatomic) int dropsWatered;
 @property (strong, nonatomic) NSMutableArray *pinnedTasks;
 @property (strong, nonatomic) NSMutableArray *completedTasks;
+@property (nonatomic) int plantLevel;
 
 
 

@@ -17,6 +17,7 @@
     if(self = [super init]) {
 
         _currentDrops = 0;
+        _dropsWatered = 0;
         _lifetimeDrops = _currentDrops;
         _pinnedTasks = [[NSMutableArray alloc] init];
         _completedTasks = [[NSMutableArray alloc] init];
@@ -34,6 +35,7 @@
         _name = [aDecoder decodeObjectForKey:@"name"];
         _password = [aDecoder decodeObjectForKey:@"password"];
         _dropsWatered = [aDecoder decodeIntForKey:@"dropsWatered"];
+        _plantLevel = [aDecoder decodeIntForKey:@"plantLevel"];
     }
     return self;
 }
@@ -46,6 +48,7 @@
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.password forKey:@"password"];
     [aCoder encodeInt:self.dropsWatered forKey:@"dropsWatered"];
+    [aCoder encodeInt:self.plantLevel forKey:@"plantLevel"];
 }
 
 @end

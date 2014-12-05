@@ -19,9 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Completed Tasks";
+    self.title = @"Completed Actions";
     [self.tableView registerNib:[UINib nibWithNibName:@"CompletedTaskCell" bundle:nil] forCellReuseIdentifier:@"completedcell"];
 
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +55,7 @@
     taskCell.taskDropLabel.text = [NSString stringWithFormat:@"%d", taskAction.dropValue];
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"MM/dd/yy"];
+    [format setDateFormat:@"MM/dd"];
     NSString *formattedDate = [format stringFromDate:taskAction.dateAdded];
     taskCell.taskDateLabel.text = formattedDate;
     

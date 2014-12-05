@@ -31,14 +31,19 @@
     _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     _tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:_tapper];
-    //self.view.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    self.colorView.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
     
     self.login.layer.cornerRadius = 10;
     self.login.clipsToBounds = YES;
     self.signup.layer.cornerRadius = 10;
     self.signup.clipsToBounds = YES;
-    self.login.backgroundColor = [UIColor colorWithRed:52.0/255 green:162.0/255 blue:44.0/255 alpha:1];
-    self.signup.backgroundColor = [UIColor colorWithRed:52.0/255 green:162.0/255 blue:44.0/255 alpha:1];
+    self.login.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
+    [[self.login layer] setBorderWidth:1.5f];
+    [[self.login layer] setBorderColor:[UIColor whiteColor].CGColor];
+    [[self.signup layer] setBorderWidth:1.5f];
+    [[self.signup layer] setBorderColor:[UIColor whiteColor].CGColor];
+    
+    self.signup.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
     self.login.titleLabel.textColor = [UIColor blackColor];
     self.signup.titleLabel.textColor = [UIColor blackColor];
     
@@ -63,6 +68,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup didn't work!" message:@"One of your fields was left blank." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
         [alert show];
         return;
+      
     }
     
     if (testUser) {
@@ -71,7 +77,7 @@
         [alert show];
         return;
     } else {
-        
+    
     
     delegate.user = [[User alloc] init];
     delegate.user.name = self.usernameField.text;
@@ -79,7 +85,8 @@
         
         UITabBarController *tabBarController = [[UITabBarController alloc] init];
         delegate.tabBarController = tabBarController;
-        
+    
+        delegate.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
         //Create the plant and task controllers, the containing navigation controllers, and adds the icon to the tab bar.
         PlantController *plantController = [[PlantController alloc] init];
         UINavigationController *plantNavController = [[UINavigationController alloc] initWithRootViewController:plantController];
@@ -105,6 +112,7 @@
         //Finish initializing the tab bar controller.
         NSArray *controllers = [NSArray arrayWithObjects:plantNavController, tasksNavController, nil];
         tabBarController.viewControllers = controllers;
+    
         
         [delegate.drawer setCenterViewController:tabBarController];
         [delegate enableDrawerAccess];
@@ -138,20 +146,20 @@
             delegate.user = testUser;
         }
     } else {
-        NSLog(@"this is a brand new user");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login didn't work!" message:@"This user does not exist." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
-        [alert show];
-        return;
-        
+        NSLog(@"New user trying to login but it's okay");
+        delegate.user = [[User alloc] init];
+        delegate.user.name = self.usernameField.text;
+        delegate.user.password = self.passwordField.text;
+
     }
      
-    delegate.user = testUser;
+    
     
     
     //Creates the tab bar controller. Won't change.
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     delegate.tabBarController = tabBarController;
-    
+    delegate.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
     //Create the plant and task controllers, the containing navigation controllers, and adds the icon to the tab bar.
     PlantController *plantController = [[PlantController alloc] init];
     UINavigationController *plantNavController = [[UINavigationController alloc] initWithRootViewController:plantController];

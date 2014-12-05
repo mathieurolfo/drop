@@ -9,6 +9,9 @@
 #import "SideMenuController.h"
 #import "AppDelegate.h"
 #import "CompletedTasksController.h"
+#import "TaskDatabaseController.h"
+#import "StatsViewController.h"
+#import "UpgradesViewController.h"
 
 @interface SideMenuController ()
 
@@ -20,7 +23,7 @@
 {
     switch (section) {
         case 0:
-            return 2;
+            return 3;
             break;
         case 1:
             return 3;
@@ -49,39 +52,46 @@
                 case 1:
                     cell.textLabel.text = @"Plant Stats";
                     break;
+                case 2:
+                    cell.textLabel.text = @"Plant Upgrades";
+                    break;
             }
             break;
         case 1: //Tasks
             switch (indexPath.row) {
                 case 0:
-                    cell.textLabel.text = @"Your To-Do Actions";
+                    cell.textLabel.text = @"Find Water-Saving Actions";
                     break;
                 case 1:
-                    cell.textLabel.text = @"Completed Actions";
+                    cell.textLabel.text = @"Your To-Do Actions";
                     break;
                 case 2:
-                    cell.textLabel.text = @"Actions Database";
+                    cell.textLabel.text = @"Completed Actions";
                     break;
+                
             }
             break;
         case 2: //User
             switch (indexPath.row) {
                 case 0:
-                    cell.textLabel.text = @"Profile Information";
+                    cell.textLabel.text = @"Replay Tutorial";
                     break;
                 case 1:
                     cell.textLabel.text = @"Log Out";
                     break;
             }
     }
+    
     cell.backgroundColor = [UIColor whiteColor];
-    cell.textLabel.font = [cell.textLabel.font fontWithSize:14.0];
+    
+    cell.textLabel.font = [cell.textLabel.font fontWithSize:15.0];
+    
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 35.0;
+    return 40.0;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -104,7 +114,8 @@
     myLabel.frame = CGRectMake(0, 0, 320, 22);
     myLabel.font = [UIFont boldSystemFontOfSize:12];
     myLabel.text = [self tableView:tableView titleForHeaderInSection:section];
-    myLabel.backgroundColor = [UIColor grayColor];
+    myLabel.textColor = [UIColor whiteColor];
+    myLabel.backgroundColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
     
     UIView *headerView = [[UIView alloc] init];
     [headerView addSubview:myLabel];
@@ -122,13 +133,49 @@
         [delegate.drawer closeDrawerAnimated:YES completion:nil];
     }
     
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        [delegate.tabBarController setSelectedIndex:0];
+        StatsViewController *svc = [[StatsViewController alloc] init];
+        [delegate.tabBarController setSelectedIndex:1];
+        [delegate.tasksNav pushViewController:svc animated:YES];
+
+        [delegate.drawer closeDrawerAnimated:YES completion:nil];
+    }
+    
+    if (indexPath.section == 0 && indexPath.row == 2) {
+        [delegate.tabBarController setSelectedIndex:1];
+        UpgradesViewController *svc = [[UpgradesViewController alloc] init];
+        
+        [delegate.tasksNav pushViewController:svc animated:YES];
+        
+        [delegate.drawer closeDrawerAnimated:YES completion:nil];
+    }
+    
+    
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        [delegate.tabBarController setSelectedIndex:1];
+        TaskDatabaseController *tdc = [[TaskDatabaseController alloc] init];
+        [delegate.tasksNav pushViewController:tdc animated:YES];
+        [delegate.drawer closeDrawerAnimated:YES completion:nil];
+    }
+    
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        [delegate.tabBarController setSelectedIndex:1];
+        [delegate.drawer closeDrawerAnimated:YES completion:nil];
+    }
     
     //Push Completed Tasks Controller
-    if (indexPath.section == 1 && indexPath.row == 1) {
+    if (indexPath.section == 1 && indexPath.row == 2) {
         [delegate.tabBarController setSelectedIndex:1];
         CompletedTasksController *ctc = [[CompletedTasksController alloc] init];
         [delegate.tasksNav pushViewController:ctc animated:YES];
         [delegate.drawer closeDrawerAnimated:YES completion:nil];
+    }
+    
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        [delegate.tabBarController setSelectedIndex:0];
+        [delegate.drawer closeDrawerAnimated:YES completion:nil];
+        [delegate.plantController completeTutorial];
     }
     
     //Logging Out
@@ -153,6 +200,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.nameLabel.textColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
     self.nameLabel.text = @"Welcome to Drop";
 }
 

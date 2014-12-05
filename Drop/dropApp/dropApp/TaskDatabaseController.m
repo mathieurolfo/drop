@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"New Tasks";
+    self.title = @"Actions Library";
     [self.tableView registerNib:[UINib nibWithNibName:@"TaskCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     // Do any additional setup after loading the view from its nib.
     ;
@@ -42,11 +42,13 @@
     [delegate.user.pinnedTasks addObject:action];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Task pinned" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
     [alert show];
-    [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:1.0f];
+    [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:0.8f];
     
 }
 
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50.0;
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -63,7 +65,7 @@
     taskCell.dropLabel.text = [NSString stringWithFormat:@"%d", taskAction.dropValue];
     taskCell.cellIndex = indexPath.row;
     taskCell.delegate = self;
-    
+    taskCell.pinTaskButton.titleLabel.textColor = [UIColor colorWithRed:0 green:88.0/255 blue:38.0/255 alpha:1];
     return (UITableViewCell *)taskCell;
 }
 
@@ -75,7 +77,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   
+    [self didPinTaskAtIndex:indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

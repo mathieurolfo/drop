@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -27,12 +26,12 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="22" id="MTT-1m-RIA"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKe-eg-3Je">
-                        <rect key="frame" x="22" y="13" width="139" height="21"/>
+                        <rect key="frame" x="45" y="13" width="139" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="139" id="3Te-uJ-yT9"/>
                         </constraints>
@@ -40,16 +39,23 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_60255" translatesAutoresizingMaskIntoConstraints="NO" id="6DS-Az-iaM">
+                        <rect key="frame" x="4" y="5" width="34" height="34"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="pKe-eg-3Je" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="9TM-Be-5CF"/>
                     <constraint firstItem="pKe-eg-3Je" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="1.5" id="BLz-P0-5mr"/>
                     <constraint firstItem="pKe-eg-3Je" firstAttribute="firstBaseline" secondItem="GlF-IR-KlQ" secondAttribute="firstBaseline" id="BW6-70-4n1"/>
+                    <constraint firstItem="pKe-eg-3Je" firstAttribute="leading" secondItem="6DS-Az-iaM" secondAttribute="trailing" constant="7" id="KOz-NS-3Of"/>
                     <constraint firstItem="pKe-eg-3Je" firstAttribute="baseline" secondItem="GlF-IR-KlQ" secondAttribute="baseline" id="PEB-3J-gCR"/>
-                    <constraint firstItem="GlF-IR-KlQ" firstAttribute="leading" secondItem="pKe-eg-3Je" secondAttribute="trailing" constant="33" id="Wpd-mN-46P"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="6DS-Az-iaM" secondAttribute="bottom" constant="-3.5" id="Sxd-CO-Ool"/>
+                    <constraint firstItem="6DS-Az-iaM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-4" id="WWM-Wv-BtZ"/>
+                    <constraint firstItem="GlF-IR-KlQ" firstAttribute="leading" secondItem="pKe-eg-3Je" secondAttribute="trailing" constant="10" id="Wpd-mN-46P"/>
+                    <constraint firstItem="6DS-Az-iaM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="Xr1-Rv-4ha"/>
                     <constraint firstAttribute="trailingMargin" secondItem="L2V-aD-gv2" secondAttribute="trailing" constant="9" id="gYe-zJ-fGn"/>
                     <constraint firstItem="L2V-aD-gv2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="iZH-Kg-elM"/>
-                    <constraint firstItem="pKe-eg-3Je" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="ox8-ac-595"/>
+                    <constraint firstItem="pKe-eg-3Je" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="37" id="ox8-ac-595"/>
                     <constraint firstItem="L2V-aD-gv2" firstAttribute="leading" secondItem="GlF-IR-KlQ" secondAttribute="trailing" constant="32" id="phc-Cx-RXX"/>
                     <constraint firstAttribute="bottomMargin" secondItem="L2V-aD-gv2" secondAttribute="bottom" constant="2" id="xWF-q4-73l"/>
                 </constraints>
@@ -62,4 +68,7 @@
             <point key="canvasLocation" x="279" y="215"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon_60255" width="50" height="50"/>
+    </resources>
 </document>

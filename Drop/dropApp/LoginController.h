@@ -11,5 +11,6 @@
 @interface LoginController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *login;
 @property (weak, nonatomic) IBOutlet UIButton *signup;
+@property (weak, nonatomic) IBOutlet UIView *colorView;
 
 @end

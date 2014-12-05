@@ -19,8 +19,8 @@
                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="36b-xO-Opa">
                     <rect key="frame" x="-47" y="635" width="94" height="29"/>
                 </stepper>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="L3X-2C-G0L">
-                    <rect key="frame" x="0.0" y="65" width="600" height="585"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="L3X-2C-G0L">
+                    <rect key="frame" x="0.0" y="65" width="600" height="419"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="xpz-l3-Bvv"/>
@@ -30,16 +30,32 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9u-H2-7tc">
                     <rect key="frame" x="32" y="32" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo v2" translatesAutoresizingMaskIntoConstraints="NO" id="b4K-ej-tQ0">
+                    <rect key="frame" x="256" y="512" width="88" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="7FH-L7-dMH"/>
+                        <constraint firstAttribute="width" constant="88" id="DDt-2U-Olv"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="b4K-ej-tQ0" secondAttribute="bottom" constant="25" id="ErN-wG-QiK"/>
                 <constraint firstItem="w9u-H2-7tc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="J4E-9e-uPu"/>
+                <constraint firstItem="L3X-2C-G0L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XKV-R2-Vno"/>
                 <constraint firstItem="w9u-H2-7tc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="bK2-zH-Sxp"/>
+                <constraint firstItem="b4K-ej-tQ0" firstAttribute="centerX" secondItem="L3X-2C-G0L" secondAttribute="centerX" id="eQl-hz-9nb"/>
+                <constraint firstItem="L3X-2C-G0L" firstAttribute="top" secondItem="w9u-H2-7tc" secondAttribute="bottom" constant="12" id="leP-wC-KkF"/>
+                <constraint firstItem="b4K-ej-tQ0" firstAttribute="top" secondItem="L3X-2C-G0L" secondAttribute="bottom" constant="28" id="pTm-nO-Fdl"/>
+                <constraint firstItem="L3X-2C-G0L" firstAttribute="top" secondItem="w9u-H2-7tc" secondAttribute="bottom" constant="12" id="tZu-c7-cIT"/>
+                <constraint firstAttribute="trailing" secondItem="L3X-2C-G0L" secondAttribute="trailing" id="uzs-fl-6nx"/>
             </constraints>
-            <point key="canvasLocation" x="305" y="352"/>
+            <point key="canvasLocation" x="305" y="350"/>
         </view>
     </objects>
+    <resources>
+        <image name="Logo v2" width="262" height="196"/>
+    </resources>
 </document>

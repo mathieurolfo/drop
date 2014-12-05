@@ -14,28 +14,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxR-ho-e1a">
-                        <rect key="frame" x="43" y="13" width="36" height="17"/>
+                        <rect key="frame" x="50" y="13" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9M-fD-bvE">
-                        <rect key="frame" x="249" y="13" width="36" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Lab" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9M-fD-bvE">
+                        <rect key="frame" x="252" y="13" width="30" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhl-CZ-vrC">
-                        <rect key="frame" x="8" y="7" width="30" height="30"/>
-                        <state key="normal" title="√">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="completeButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZpY-Lx-W6h"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqj-vF-DD8">
-                        <rect key="frame" x="282" y="6" width="30" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqj-vF-DD8">
+                        <rect key="frame" x="285" y="7" width="30" height="30"/>
                         <state key="normal" title="x">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -43,16 +34,31 @@
                             <action selector="deleteButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DVx-Qb-Cuk"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3S4-x5-26N">
+                        <rect key="frame" x="-1" y="-3" width="50" height="51"/>
+                        <state key="normal" image="icon_65552">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="completeButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Mrf-o1-GSf"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="centerY" secondItem="3S4-x5-26N" secondAttribute="centerY" id="Ao8-W0-g0N"/>
+                    <constraint firstAttribute="centerY" secondItem="tqj-vF-DD8" secondAttribute="centerY" id="Fpb-P0-Hhg"/>
                     <constraint firstAttribute="centerY" secondItem="r9M-fD-bvE" secondAttribute="centerY" id="KRl-1z-G77"/>
                     <constraint firstAttribute="centerY" secondItem="ZxR-ho-e1a" secondAttribute="centerY" id="c7u-YE-2B5"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="completeTaskButton" destination="3S4-x5-26N" id="jlT-v1-drw"/>
                 <outlet property="dropLabel" destination="r9M-fD-bvE" id="0D4-Am-1ia"/>
                 <outlet property="nameLabel" destination="ZxR-ho-e1a" id="YdZ-cK-coW"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon_65552" width="50" height="50"/>
+    </resources>
 </document>

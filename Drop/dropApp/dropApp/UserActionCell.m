@@ -11,7 +11,7 @@
 @implementation UserActionCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    
 }
 
 - (IBAction)completeButtonClicked:(id)sender {

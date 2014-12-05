@@ -1,15 +1,15 @@
-1) Shrink down text on side menu controller.
-2) Make the screen move up when entering username/password.
-3) Add color to the login and dashboard screens.
+*1) Shrink down text on side menu controller.
+*2) Make the screen move up when entering username/password.
+*3) Add color to the login and dashboard screens.
 4) Create a profile overview controller.
-5) Display how many drops until the next level on the plant page.
-6) Combine profile overview with plant overview(?).
-7) Finish linking options from side menu controller.
-8) Add remaining images to app project.
-9) Get icons for side menu bar and table view cells.
-10) Correctly format date on completed tasks controller.
-11) Add a "Credits" screen for app information and creator information.
-
+*5) Display how many drops until the next level on the plant page.
+*6) Combine profile overview with plant overview(?).
+*7) Finish linking options from side menu controller.
+*8) Add remaining images to app project.
+*9) Get icons for side menu bar and table view cells.
+*10) Correctly format date on completed tasks controller.
+*11) Add a "Credits" screen for app information and creator information.
+12) Finish adding tasks to the tasks list.
 
 Optional
 a) Create a store for item addons.
